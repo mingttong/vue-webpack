@@ -74,7 +74,7 @@
         },
         methods: {
             toValidate,
-            onSubmit (e) {
+            onSubmit () {
                 // 手动验证
                 this.toValidate(() => {
                     utils.alert('成功')
