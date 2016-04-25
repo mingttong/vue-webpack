@@ -4,7 +4,7 @@ The template is forked from official vuejs-templates/webpack repo.
 
 这是一个基于官方 vuejs-templates/webpack 模版更改的项目.
 
-文档: <http://hq5544.github.io/vue-webpack/>
+文档: <http://hq5544.github.io/vue-webpack/>22
 
 ##  增加内容
 
