@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>Project Structure | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./commands.html" />
     
+    
+    <link rel="prev" href="./index.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="1"
+        data-chapter-title="Project Structure"
+        data-filepath="structure.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -80,7 +82,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1" data-path="structure.html">
+        <li class="chapter active" data-level="1" data-path="structure.html">
             
                 
                     <a href="./structure.html">
@@ -248,17 +250,51 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
+                        <h1 id="project-structure">Project Structure</h1>
+<pre><code class="lang-bash">.
+&#x251C;&#x2500;&#x2500; config.js                   <span class="hljs-comment"># main project config</span>
+&#x251C;&#x2500;&#x2500; build/                      <span class="hljs-comment"># webpack config files</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; ...
+&#x251C;&#x2500;&#x2500; src/
+&#x2502;   &#x251C;&#x2500;&#x2500; main.js                 <span class="hljs-comment"># app entry file</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; App.vue                 <span class="hljs-comment"># main app component</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; components/             <span class="hljs-comment"># ui components</span>
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; ...
+&#x2502;   &#x2514;&#x2500;&#x2500; assets/                 <span class="hljs-comment"># module assets (processed by webpack)</span>
+&#x2502;       &#x2514;&#x2500;&#x2500; ...
+&#x251C;&#x2500;&#x2500; static/                     <span class="hljs-comment"># pure static assets (directly copied)</span>
+&#x251C;&#x2500;&#x2500; <span class="hljs-built_in">test</span>/
+&#x2502;   &#x2514;&#x2500;&#x2500; unit/                   <span class="hljs-comment"># unit tests</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; specs/              <span class="hljs-comment"># test spec files</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; index.js            <span class="hljs-comment"># test build entry file</span>
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; karma.conf.js       <span class="hljs-comment"># test runner config file</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; e2e/                    <span class="hljs-comment"># e2e tests</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; specs/              <span class="hljs-comment"># test spec files</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; custom-assertions/  <span class="hljs-comment"># custom assertions for e2e tests</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; runner.js           <span class="hljs-comment"># test runner script</span>
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; nightwatch.conf.js  <span class="hljs-comment"># test runner config file</span>
+&#x251C;&#x2500;&#x2500; .babelrc                    <span class="hljs-comment"># babel config</span>
+&#x251C;&#x2500;&#x2500; .eslintrc.js                <span class="hljs-comment"># eslint config</span>
+&#x251C;&#x2500;&#x2500; index.html                  <span class="hljs-comment"># index.html template</span>
+&#x2514;&#x2500;&#x2500; package.json                <span class="hljs-comment"># build scripts and dependencies</span>
 </code></pre>
+<h3 id="configjs"><code>config.js</code></h3>
+<p>This is the main configuration file that exposes some of the most common configuration options for the build setup. See <a href="proxy.html">API Proxying During Development</a> and <a href="backend.html">Integrating with Backend Framework</a> for more details.</p>
+<h3 id="build"><code>build/</code></h3>
+<p>This directory holds the actual configurations for both the development server and the production webpack build. Normally you don&apos;t need to touch these files unless you want to customize Webpack loaders, in which case you should probably look at <code>build/webpack.base.conf.js</code>.</p>
+<h3 id="src"><code>src/</code></h3>
+<p>This is where most of your application code will live in. How to structure everything inside this directory is largely up to you; if you are using Vuex, you can consult the <a href="http://vuex.vuejs.org/en/structure.html" target="_blank">recommendations for Vuex applications</a>.</p>
+<h3 id="static"><code>static/</code></h3>
+<p>This directory is an escape hatch for static assets that you do not want to process with Webpack. They will be directly copied into the same directory where webpack-built assets are generated.</p>
+<p>See <a href="static.html">Handling Static Assets</a> for more details.</p>
+<h3 id="testunit"><code>test/unit</code></h3>
+<p>Contains unit test related files. See <a href="unit.html">Unit Testing</a> for more details.</p>
+<h3 id="teste2e"><code>test/e2e</code></h3>
+<p>Contains e2e test related files. See <a href="e2e.html">End-to-end Testing</a> for more details.</p>
+<h3 id="indexhtml"><code>index.html</code></h3>
+<p>This is the <strong>template</strong> <code>index.html</code> for our single page application. During development and builds, Webpack will generate assets, and the URLs for those generated assets will automatically injected into this template to render the final HTML.</p>
+<h3 id="packagejson"><code>package.json</code></h3>
+<p>The NPM package meta file that contains all the build dependencies and <a href="commands.html">build commands</a>.</p>
 
                     
                     </section>
@@ -269,8 +305,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./commands.html" class="navigation navigation-next " aria-label="Next page: Build Commands"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

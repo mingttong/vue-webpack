@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>Unit Testing | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./e2e.html" />
     
+    
+    <link rel="prev" href="./proxy.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="7"
+        data-chapter-title="Unit Testing"
+        data-filepath="unit.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -170,7 +172,7 @@
             
         </li>
     
-        <li class="chapter " data-level="7" data-path="unit.html">
+        <li class="chapter active" data-level="7" data-path="unit.html">
             
                 
                     <a href="./unit.html">
@@ -248,17 +250,32 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
-</code></pre>
+                        <h1 id="unit-testing">Unit Testing</h1>
+<p>An overview of the tools used by this boilerplate for unit testing:</p>
+<ul>
+<li><a href="http://karma-runner.github.io/0.13/index.html" target="_blank">Karma</a>: the test runner that launches browsers, runs the tests and reports the results to us.</li>
+<li><a href="https://github.com/webpack/karma-webpack" target="_blank">karma-webpack</a>: the plugin for Karma that bundles our tests using Webpack.</li>
+<li><a href="https://mochajs.org/" target="_blank">Mocha</a>: the test framework that we write test specs with.</li>
+<li><a href="http://chaijs.com/" target="_blank">Chai</a>: test assertion library that provides better assertion syntax.</li>
+<li><a href="http://sinonjs.org/" target="_blank">Sinon</a>: test utility library that provides spies, stubs and mocks.</li>
+</ul>
+<p>Chai and Sinon are integrated using <a href="https://github.com/kmees/karma-sinon-chai" target="_blank">karma-sinon-chai</a>, so all Chai interfaces (<code>should</code>, <code>expect</code>, <code>assert</code>) and <code>sinon</code> are globally available in test files.</p>
+<p>And the files:</p>
+<ul>
+<li><p><code>index.js</code></p>
+<p>This the entry file used by <code>karma-webpack</code> to bundle all the test code and source code (for coverage purposes). You can ignore it for the most part.</p>
+</li>
+<li><p><code>specs/</code></p>
+<p>This directory is where you write your actual tests. You can use full ES2015 and all supported Webpack loaders in your tests.</p>
+</li>
+<li><p><code>karma.conf.js</code></p>
+<p>This is the Karma configuration file. See <a href="http://karma-runner.github.io/0.13/index.html" target="_blank">Karma docs</a> for more details.</p>
+</li>
+</ul>
+<h2 id="running-tests-in-more-browsers">Running Tests in More Browsers</h2>
+<p>You can run the tests in multiple real browsers by installing more <a href="http://karma-runner.github.io/0.13/config/browsers.html" target="_blank">karma launchers</a> and adjusting the <code>browsers</code> field in <code>test/unit/karma.conf.js</code>.</p>
+<h2 id="mocking-dependencies">Mocking Dependencies</h2>
+<p>This boilerplate comes with <a href="https://github.com/plasticine/inject-loader" target="_blank">inject-laoder</a> installed by default. For usage with <code>*.vue</code> components, see <a href="http://vuejs.github.io/vue-loader/workflow/testing-with-mocks.html" target="_blank">vue-loader docs on testing with mocks</a>.</p>
 
                     
                     </section>
@@ -269,8 +286,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./proxy.html" class="navigation navigation-prev " aria-label="Previous page: API Proxying During Development"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./e2e.html" class="navigation navigation-next " aria-label="Next page: End-to-end Testing"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

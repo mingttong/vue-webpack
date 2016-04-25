@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>API Proxying During Development | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./unit.html" />
     
+    
+    <link rel="prev" href="./backend.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="6"
+        data-chapter-title="API Proxying During Development"
+        data-filepath="proxy.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -155,7 +157,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6" data-path="proxy.html">
+        <li class="chapter active" data-level="6" data-path="proxy.html">
             
                 
                     <a href="./proxy.html">
@@ -248,17 +250,27 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
+                        <h1 id="api-proxying-during-development">API Proxying During Development</h1>
+<p>When integrating this boilerplate with an existing backend, a common need is to access the backend API when using the dev server. To achieve that, we can run the dev server and the API backend side-by-side (or remotely), and let the dev server proxy all API requests to the actual backend.</p>
+<p>To configure the proxy rules, edit <code>dev.proxyTable</code> option in <code>config.js</code>. The dev server is using <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank">http-proxy-middleware</a> for proxying, so you should refer to its docs for detailed usage. But here&apos;s a simple example:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// ...</span>
+  dev: {
+    proxyTable: {
+      <span class="hljs-comment">// proxy all requests starting with /api to jsonplaceholder</span>
+      <span class="hljs-string">&apos;/api&apos;</span>: {
+        target: <span class="hljs-string">&apos;http://jsonplaceholder.typicode.com&apos;</span>,
+        changeOrigin: <span class="hljs-literal">true</span>,
+        pathRewrite: {
+          <span class="hljs-string">&apos;^/api&apos;</span>: <span class="hljs-string">&apos;&apos;</span>
+        }
+      }
+    }
+  }
+}
 </code></pre>
+<p>The above example will proxy the request <code>/api/posts/1</code> to <code>http://jsonplaceholder.typicode.com/posts/1</code>.</p>
 
                     
                     </section>
@@ -269,8 +281,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./backend.html" class="navigation navigation-prev " aria-label="Previous page: Integrate with Backend Framework"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./unit.html" class="navigation navigation-next " aria-label="Next page: Unit Testing"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

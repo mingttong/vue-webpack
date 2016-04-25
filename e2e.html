@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>End-to-end Testing | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./prerender.html" />
     
+    
+    <link rel="prev" href="./unit.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="8"
+        data-chapter-title="End-to-end Testing"
+        data-filepath="e2e.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -185,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8" data-path="e2e.html">
+        <li class="chapter active" data-level="8" data-path="e2e.html">
             
                 
                     <a href="./e2e.html">
@@ -248,17 +250,25 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
-</code></pre>
+                        <h1 id="endtoend-testing">End-to-end Testing</h1>
+<p>This boilerplate uses <a href="http://nightwatchjs.org" target="_blank">Nightwatch.js</a> for e2e tests. Nightwatch.js is a highly integrated e2e test runner built on top of Selenium. This boilerplate comes with Selenium server and chromedriver binaries pre-configured for you, so you don&apos;t have to mess with these yourself.</p>
+<p>Let&apos;s take a look at the files in the <code>test/e2e</code> directory:</p>
+<ul>
+<li><p><code>runner.js</code></p>
+<p>A Node.js script that starts the dev server, and then launches Nightwatch to run tests against it. This is the script that will run when you run <code>npm run e2e</code>.</p>
+</li>
+<li><p><code>nightwatch.conf.js</code></p>
+<p>Nightwatch configuration file. See <a href="http://nightwatchjs.org/guide#settings-file" target="_blank">Nightwatch&apos;s docs on configuration</a> for more details.</p>
+</li>
+<li><p><code>custom-assertions/</code></p>
+<p>Custom assertions that can be used in Nightwatch tests. See <a href="http://nightwatchjs.org/guide#writing-custom-assertions" target="_blank">Nightwatch&apos;s docs on writing custom assertions</a> for more details.</p>
+</li>
+<li><p><code>specs/</code></p>
+<p>You actual tests! See <a href="http://nightwatchjs.org/guide#writing-tests" target="_blank">Nightwatch&apos;s docs on writing tests</a> and <a href="http://nightwatchjs.org/api" target="_blank">API reference</a> for more details.</p>
+</li>
+</ul>
+<h3 id="running-tests-in-more-browsers">Running Tests in More Browsers</h3>
+<p>To configure which browsers to run the tests in, add an entry under &quot;test_settings&quot; in <a href="https://github.com/vuejs-templates/webpack/blob/master/template/test/e2e/nightwatch.conf.js#L17-L39" target="_blank"><code>test/e2e/nightwatch.conf.js</code></a> , and also the <code>--env</code> flag in <a href="https://github.com/vuejs-templates/webpack/blob/master/template/test/e2e/runner.js#L15" target="_blank"><code>test/e2e/runner.js</code></a>. If you wish to configure remote testing on services like SauceLabs, you can either make the Nightwatch config conditional based on environment variables, or use a separate config file altogether. Consult <a href="http://nightwatchjs.org/guide#selenium-settings" target="_blank">Nightwatch&apos;s docs on Selenium</a> for more details.</p>
 
                     
                     </section>
@@ -269,8 +279,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./unit.html" class="navigation navigation-prev " aria-label="Previous page: Unit Testing"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./prerender.html" class="navigation navigation-next " aria-label="Next page: Prerendering for SEO"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

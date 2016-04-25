@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>Linter Configuration | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./static.html" />
     
+    
+    <link rel="prev" href="./commands.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="3"
+        data-chapter-title="Linter Configuration"
+        data-filepath="linter.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -110,7 +112,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3" data-path="linter.html">
+        <li class="chapter active" data-level="3" data-path="linter.html">
             
                 
                     <a href="./linter.html">
@@ -248,17 +250,22 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
+                        <h1 id="linter-configuration">Linter Configuration</h1>
+<p>This boilerplate uses <a href="http://eslint.org/" target="_blank">ESLint</a> as the linter, and uses the <a href="https://github.com/feross/standard/blob/master/RULES.md" target="_blank">Standard</a> preset with some small customizations.</p>
+<p>If you are not happy with the default linting rules, you have several options:</p>
+<ol>
+<li><p>Overwrite individual rules in <code>.eslintrc.js</code>. For example, you can add the following rule to enforce semicolons instead of omitting them:</p>
+<pre><code class="lang-js"><span class="hljs-string">&quot;semi&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;always&quot;</span>]
 </code></pre>
+</li>
+<li><p>Remove the <code>extends: &apos;standard&apos;</code> line in <code>.eslintrc.js</code> and use a completely custom eslint config. See <a href="http://eslint.org/docs/user-guide/configuring" target="_blank">ESLint documentation</a> for more details.</p>
+</li>
+<li><p>Use a different ESLint preset, for example <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank">eslint-config-airbnb</a>.</p>
+</li>
+<li><p>Disable linting altogether: comment out the <code>module.preLoaders</code> block in <code>build/webpack.base.conf.js</code>.</p>
+<p>You will also need to disable linting if you are using a compile-to-JavaScript language, e.g. CoffeeScript.</p>
+</li>
+</ol>
 
                     
                     </section>
@@ -269,8 +276,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./commands.html" class="navigation navigation-prev " aria-label="Previous page: Build Commands"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./static.html" class="navigation navigation-next " aria-label="Next page: Handling Static Assets"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

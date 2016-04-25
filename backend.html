@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>Integrate with Backend Framework | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./proxy.html" />
     
+    
+    <link rel="prev" href="./static.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="5"
+        data-chapter-title="Integrate with Backend Framework"
+        data-filepath="backend.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -140,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5" data-path="backend.html">
+        <li class="chapter active" data-level="5" data-path="backend.html">
             
                 
                     <a href="./backend.html">
@@ -248,17 +250,49 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
+                        <h1 id="integrating-with-backend-framework">Integrating with Backend Framework</h1>
+<p>If you are building a purely-static app (one that is deployed separately from the backend API), then you probably don&apos;t even need to edit <code>config.js</code>. However, if you want to integrate this template with an existing backend framework, e.g. Rails/Django/Laravel, which comes with their own project structures, you can edit <code>config.js</code> to directly generate front-end assets into your backend project.</p>
+<p>Let&apos;s take a look at the default <code>config.js</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>)
+
+<span class="hljs-built_in">module</span>.exports = {
+  build: {
+    index: path.resolve(__dirname, <span class="hljs-string">&apos;dist/index.html&apos;</span>),
+    assetsRoot: path.resolve(__dirname, <span class="hljs-string">&apos;dist&apos;</span>),
+    assetsSubDirectory: <span class="hljs-string">&apos;static&apos;</span>,
+    assetsPublicPath: <span class="hljs-string">&apos;/&apos;</span>,
+    productionSourceMap: <span class="hljs-literal">true</span>
+  },
+  dev: {
+    port: <span class="hljs-number">8080</span>,
+    proxyTable: {}
+  }
+}
 </code></pre>
+<p>Inside the <code>build</code> section, we have the following options:</p>
+<h3 id="buildindex"><code>build.index</code></h3>
+<blockquote>
+<p>Must be an absolute path on your local file system.</p>
+</blockquote>
+<p>This is where the <code>index.html</code> (with injected asset URLs) will be generated.</p>
+<p>If you are using this template with a backend-framework, you can edit <code>index.html</code> accordingly and point this path to a view file rendered by your backend app, e.g. <code>app/views/layouts/application.html.erb</code> for a Rails app, or <code>resources/views/index.blade.php</code> for a Laravel app.</p>
+<h3 id="buildassetsroot"><code>build.assetsRoot</code></h3>
+<blockquote>
+<p>Must be an absolute path on your local file system.</p>
+</blockquote>
+<p>This should point to the root directory that contains all the static assets for your app. For example, <code>public/</code> for both Rails/Laravel.</p>
+<h3 id="buildassetssubdirectory"><code>build.assetsSubDirectory</code></h3>
+<p>Nest webpack-generated assets under this directory in <code>build.assetsRoot</code>, so that they are not mixed with other files you may have in <code>build.assetsRoot</code>. For example, if <code>build.assetsRoot</code> is <code>/path/to/dist</code>, and <code>build.assetsSubDirectory</code> is <code>static</code>, then all Webpack assets will be generated in <code>path/to/dist/static</code>.</p>
+<p>This directory will be cleaned before each build, so it should only contain assets generated by the build.</p>
+<p>Files inside <code>static/</code> will be copied into this directory as-is during build. This means if you change this prefix, all your absolute URLs referencing files in <code>static/</code> will also need to be changed. See <a href="static.html">Handling Static Assets</a> for more details.</p>
+<h3 id="buildassetspublicpath"><code>build.assetsPublicPath</code></h3>
+<p>This should be the URL path where your <code>build.assetsRoot</code> will be served from over HTTP. In most cases, this will be root (<code>/</code>). Only change this if your backend framework serves static assets with a path prefix. Internally, this is passed to Webpack as <code>output.publicPath</code>.</p>
+<h3 id="buildproductionsourcemap"><code>build.productionSourceMap</code></h3>
+<p>Whether to generate source maps for production build.</p>
+<h3 id="devport"><code>dev.port</code></h3>
+<p>Specify the port for the dev server to listen to.</p>
+<h3 id="devproxytable"><code>dev.proxyTable</code></h3>
+<p>Define proxy rules for the dev server. See <a href="proxy.html">API Proxying During Development</a> for more details.</p>
 
                     
                     </section>
@@ -269,8 +303,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./static.html" class="navigation navigation-prev " aria-label="Previous page: Handling Static Assets"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./proxy.html" class="navigation navigation-next " aria-label="Next page: API Proxying During Development"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

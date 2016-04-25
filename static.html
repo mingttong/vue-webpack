@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>Handling Static Assets | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and vue-loader. Make sure to also read vue-loader&#39;s documentation for common workflow recipes.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
         
         
@@ -37,8 +37,10 @@
         
     
     
-    <link rel="next" href="./structure.html" />
+    <link rel="next" href="./backend.html" />
     
+    
+    <link rel="prev" href="./linter.html" />
     
 
         
@@ -47,9 +49,9 @@
         
         
     <div class="book"
-        data-level="0"
-        data-chapter-title="Introduction"
-        data-filepath="README.md"
+        data-level="4"
+        data-chapter-title="Handling Static Assets"
+        data-filepath="static.md"
         data-basepath="."
         data-revision="Mon Apr 25 2016 18:11:04 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -67,7 +69,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -125,7 +127,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4" data-path="static.html">
+        <li class="chapter active" data-level="4" data-path="static.html">
             
                 
                     <a href="./static.html">
@@ -248,17 +250,37 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>This boilerplate is targeted towards large, serious projects and assumes you are somewhat familiar with Webpack and <code>vue-loader</code>. Make sure to also read <a href="http://vuejs.github.io/vue-loader/index.html" target="_blank"><code>vue-loader</code>&apos;s documentation</a> for common workflow recipes.</p>
-<p>If you just want to try out <code>vue-loader</code> or whip out a quick prototype, use the <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank">webpack-simple</a> template instead.</p>
-<h2 id="quickstart">Quickstart</h2>
-<p>To use this template, scaffold a project with <a href="https://github.com/vuejs/vue-cli" target="_blank">vue-cli</a>. <strong>It is recommended to use npm 3+ for a more efficient dependency tree.</strong></p>
-<pre><code class="lang-bash">$ npm install -g vue-cli
-$ vue init webpack my-project
-$ <span class="hljs-built_in">cd</span> my-project
-$ npm install
-$ npm run dev
+                        <h1 id="handing-static-assets">Handing Static Assets</h1>
+<p>You will notice in the project structure we have two directories for static assets: <code>src/assets</code> and <code>static/</code>. What is the difference between them?</p>
+<h3 id="webpacked-assets">Webpacked Assets</h3>
+<p>To answer this question, we first need to understand how Webpack deals with static assets. In <code>*.vue</code> components, all your templates and CSS are parsed by <code>vue-html-loader</code> and <code>css-loader</code> to look for asset URLs. For example, in <code>&lt;img src=&quot;./logo.png&quot;&gt;</code> and <code>background: url(./logo.png)</code>, <code>&quot;./logo.png&quot;</code> is a relative asset path and will be <strong>resolved by Webpack as a module dependency</strong>.</p>
+<p>Because <code>logo.png</code> is not JavaScript, when treated as a module dependency, we need to use <code>url-loader</code> and <code>file-loader</code> to process it. This boilerplate has already configured these loaders for you, so you basically get features such as filename fingerprinting and conditional bas64 inlining for free, while being able to use relative/module paths without worrying about deployment.</p>
+<p>Since these assets may be inlined/copied/renamed during build, they are essentially part of your source code. This is why it is recommended to place Webpack-processed static assets inside <code>/src</code>, along side other source files. In fact, you don&apos;t even have to put them all in <code>/src/assets</code>: you can organize them based on the module/component using them. For example, you can put each component in its own directory, with its static assets right next to it.</p>
+<h3 id="asset-resolving-rules">Asset Resolving Rules</h3>
+<ul>
+<li><p><strong>Relative URLs</strong>, e.g. <code>./assets/logo.png</code> will be interpreted as a module dependency. They will be replaced with a auto-generated URL based on your Webpack output configuration.</p>
+</li>
+<li><p><strong>Non-prefixed URLs</strong>, e.g. <code>assets/logo.png</code> will be treated the same as the relative URLs and translated into <code>./assets/logo.png</code>.</p>
+</li>
+<li><p><strong>URLs prefixed with <code>~</code></strong> are treated as a module request, similar to <code>require(&apos;some-module/image.png&apos;)</code>. You need to use this prefix if you want to leverage Webpack&apos;s module resolving configurations. For example if you have a resolve alias for <code>assets</code>, you need to use <code>&lt;img src=&quot;~assets/logo.png&quot;&gt;</code> to ensure that alias is respected.</p>
+</li>
+<li><p><strong>Root-relative URLs</strong>, e.g. <code>/assets/logo.png</code> are not processed at all.</p>
+</li>
+</ul>
+<h3 id="real-static-assets">&quot;Real&quot; Static Assets</h3>
+<p>In comparison, files in <code>static/</code> are not processed by Webpack at all: they are directly copied to their final destination as-is, with the same filename. You must reference these files using absolute paths, which is determined by joining <code>build.assetsPublicPath</code> and <code>build.assetsSubDirectory</code> in <code>config.js</code>.</p>
+<p>As an example, with the following default values:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// ...</span>
+  build: {
+    assetsPublicPath: <span class="hljs-string">&apos;/&apos;</span>,
+    assetsSubDirectory: <span class="hljs-string">&apos;static&apos;</span>
+  }
+}
 </code></pre>
+<p>Any file placed in <code>static/</code> should be referenced using the absolute URL <code>/static/[filename]</code>. If you change <code>assetSubDirectory</code> to <code>assets</code>, then these URLs will need to be changed to <code>/assets/[filename]</code>.</p>
+<p>We will learn more about the config file in the <a href="backend.html">next section</a>.</p>
 
                     
                     </section>
@@ -269,8 +291,10 @@ $ npm run dev
         </div>
 
         
+        <a href="./linter.html" class="navigation navigation-prev " aria-label="Previous page: Linter Configuration"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Project Structure"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./backend.html" class="navigation navigation-next " aria-label="Next page: Integrate with Backend Framework"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
