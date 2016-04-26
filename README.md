@@ -3,6 +3,7 @@
 The template is forked from official vuejs-templates/webpack repo.
 
 这是一个基于官方 vuejs-templates/webpack 模版更改的项目.
+使用了大量 ES6 语法, 还有 airbnb 的 eslint 标准.
 
 文档: <http://hq5544.github.io/vue-webpack/>
 
