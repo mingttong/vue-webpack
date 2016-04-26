@@ -24,10 +24,17 @@
                                v-validate:username="validRules.username">
                         <span slot="unit">单位</span>
                     </ele>
+                    <ele>
+                        <div>地址</div>
+                        <div>{{address?address:'--请选择地址--'}}</div>
+                    </ele>
                 </form>
             </validator>
         </group>
         <more></more>
+        <group>
+            <city-list @set-address="setAddress"></city-list>
+        </group>
         <group :single="true">
             <btn :cut="1"
                  :text="'single btn'"
@@ -45,6 +52,7 @@
     import ele from '../../components/ele'
     import group from '../../components/group'
     import more from '../../components/more'
+    import cityList from '../../components/cityList.vue'
     import utils from '../../tools/utils'
     import {
         validRules,
@@ -61,7 +69,8 @@
         data () {
             return {
                 validRules,
-                username: ""
+                username: '',
+                address: ''
             }
         },
         computed: {},
@@ -70,7 +79,8 @@
             row,
             ele,
             group,
-            more
+            more,
+            cityList
         },
         methods: {
             toValidate,
@@ -79,6 +89,9 @@
                 this.toValidate(() => {
                     utils.alert('成功')
                 })
+            },
+            setAddress (address) {
+                this.address = address
             }
         },
         validators: validators,
