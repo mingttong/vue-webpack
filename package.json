@@ -1,0 +1,10 @@
+{
+  "name": "vue-cli-template-hq5544-webpack",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.",
+  "scripts": {
+    "docs": "cd src && gitbook serve",
+    "build": "bash ./build.sh"
+  }
+}
