@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Build Commands | Introduction</title>
+        <title>命令 | 介绍</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="2"
-        data-chapter-title="Build Commands"
+        data-chapter-title="命令"
         data-filepath="commands.md"
         data-basepath="."
-        data-revision="Tue Apr 26 2016 10:10:48 GMT+0800 (CST)"
+        data-revision="Tue Apr 26 2016 12:02:33 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -91,7 +91,7 @@
                         
                             <b>1.</b>
                         
-                        Project Structure
+                        项目结构
                     </a>
             
             
@@ -106,7 +106,7 @@
                         
                             <b>2.</b>
                         
-                        Build Commands
+                        命令
                     </a>
             
             
@@ -121,7 +121,7 @@
                         
                             <b>3.</b>
                         
-                        Linter Configuration
+                        代码质量 eslint
                     </a>
             
             
@@ -136,7 +136,7 @@
                         
                             <b>4.</b>
                         
-                        Handling Static Assets
+                        静态资源
                     </a>
             
             
@@ -151,7 +151,7 @@
                         
                             <b>5.</b>
                         
-                        Integrate with Backend Framework
+                        后台融合（未完成）
                     </a>
             
             
@@ -166,7 +166,7 @@
                         
                             <b>6.</b>
                         
-                        API Proxying During Development
+                        开发过程中的 API 代理
                     </a>
             
             
@@ -181,7 +181,7 @@
                         
                             <b>7.</b>
                         
-                        Unit Testing
+                        单元测试（未完成）
                     </a>
             
             
@@ -196,7 +196,7 @@
                         
                             <b>8.</b>
                         
-                        End-to-end Testing
+                        端到端测试（未完成）
                     </a>
             
             
@@ -211,7 +211,7 @@
                         
                             <b>9.</b>
                         
-                        Prerendering for SEO
+                        SEO 预渲染（未完成）
                     </a>
             
             
@@ -240,7 +240,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Introduction</a>
+        <a href="./" >介绍</a>
     </h1>
 </div>
 
@@ -250,29 +250,28 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="build-commands">Build Commands</h1>
-<p>All build commands are executed via <a href="https://docs.npmjs.com/misc/scripts" target="_blank">NPM Scripts</a>.</p>
+                        <h1 id="&#x6307;&#x4EE4;">&#x6307;&#x4EE4;</h1>
+<p>&#x6240;&#x6709;&#x7684;&#x5F00;&#x53D1;&#x4E4B;&#x7075;&#x90FD;&#x5305;&#x542B;&#x5728; <a href="https://docs.npmjs.com/misc/scripts" target="_blank">NPM Scripts</a> &#x4E2D;&#x3002;</p>
 <h3 id="npm-run-dev"><code>npm run dev</code></h3>
 <blockquote>
-<p>Starts a Node.js local development server. See <a href="proxy.html">API Proxying During Development</a> for more details.</p>
+<p>&#x5F00;&#x59CB;&#x4E00;&#x4E2A; Node.js &#x672C;&#x5730;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B; <a href="proxy.html">&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684; API &#x4EE3;&#x7406;</a>&#x3002;</p>
 </blockquote>
 <ul>
-<li>Webpack + <code>vue-loader</code> for single file Vue components.</li>
-<li>State preserving hot-reload</li>
-<li>State preserving compilation error overlay</li>
-<li>Lint-on-save with ESLint</li>
+<li>Webpack + <code>vue-loader</code> &#x5F00;&#x53D1; Vue components SPA</li>
+<li>&#x70ED;&#x91CD;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;</li>
+<li>&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#x65F6;&#x7684;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;</li>
+<li>&#x4FDD;&#x5B58;&#x65F6;&#x81EA;&#x52A8; ESLint</li>
 <li>Source maps</li>
 </ul>
 <h3 id="npm-run-build"><code>npm run build</code></h3>
 <blockquote>
-<p>Build assets for production. See <a href="backend.html">Integrating with Backend Framework</a> for more details.</p>
+<p>&#x7F16;&#x8BD1;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B; <a href="backend.html">&#x878D;&#x5408;&#x540E;&#x53F0;</a>&#x3002;</p>
 </blockquote>
 <ul>
-<li>JavaScript minified with <a href="https://github.com/mishoo/UglifyJS2" target="_blank">UglifyJS</a>.</li>
-<li>HTML minified with <a href="https://github.com/kangax/html-minifier" target="_blank">html-minifier</a>.</li>
-<li>CSS across all components extracted into a single file and minified with <a href="https://github.com/ben-eb/cssnano" target="_blank">cssnano</a>.</li>
-<li>All static assets compiled with version hashes for efficient long-term caching, and a production <code>index.html</code> is auto-generated with proper URLs to these generated assets.</li>
-<li>Also see <a href="#how-do-i-deploy-built-assets-with-my-backend-framework">deployment notes</a>.</li>
+<li>JavaScript &#x901A;&#x8FC7; <a href="https://github.com/mishoo/UglifyJS2" target="_blank">UglifyJS</a> &#x538B;&#x7F29;&#x3002;</li>
+<li>HTML &#x901A;&#x8FC7; <a href="https://github.com/kangax/html-minifier" target="_blank">html-minifier</a> &#x538B;&#x7F29;&#x3002;</li>
+<li>&#x5168;&#x90E8;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684; CSS &#x4F1A;&#x88AB;&#x5265;&#x79BB;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; <a href="https://github.com/ben-eb/cssnano" target="_blank">cssnano</a> &#x538B;&#x7F29;&#x3002;</li>
+<li>&#x6240;&#x6709;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x90FD;&#x5E26;&#x6709;&#x81EA;&#x5DF1;&#x7684; hash &#x7248;&#x672C;&#xFF0C;&#x5E76;&#x4E14;&#x8D85;&#x957F;&#x7F13;&#x5B58;&#x3002;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x7684; <code>index.html</code> &#x4F1A;&#x81EA;&#x52A8;&#x52A0;&#x5165;&#x5BF9;&#x5E94;&#x7684; url &#x6765;&#x5F15;&#x5165;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;</li>
 </ul>
 <h3 id="npm-run-unit"><code>npm run unit</code></h3>
 <blockquote>
@@ -305,10 +304,10 @@
         </div>
 
         
-        <a href="./structure.html" class="navigation navigation-prev " aria-label="Previous page: Project Structure"><i class="fa fa-angle-left"></i></a>
+        <a href="./structure.html" class="navigation navigation-prev " aria-label="Previous page: 项目结构"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./linter.html" class="navigation navigation-next " aria-label="Next page: Linter Configuration"><i class="fa fa-angle-right"></i></a>
+        <a href="./linter.html" class="navigation navigation-next " aria-label="Next page: 代码质量 eslint"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

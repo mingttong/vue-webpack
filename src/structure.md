@@ -1,4 +1,4 @@
-# Project Structure
+# 项目结构
 
 ``` bash
 .
@@ -31,34 +31,36 @@
 
 ### `config.js`
 
-This is the main configuration file that exposes some of the most common configuration options for the build setup. See [API Proxying During Development](proxy.md) and [Integrating with Backend Framework](backend.md) for more details.
+这是进行开发和生产设置的大多数公共配置文件。详情请看[开发过程中的 API 代理](proxy.md)和[融合后台](backend.md)。
 
 ### `build/`
 
-This directory holds the actual configurations for both the development server and the production webpack build. Normally you don't need to touch these files unless you want to customize Webpack loaders, in which case you should probably look at `build/webpack.base.conf.js`.
+这个目录包含了开发环境和生产环境实际的 webpack 配置。通常你不需要修改这些文件，除非你想要自定义 webpack loaders，这是你也许需要看一下 `build/webpack.base.conf.js` 这个文件。
 
 ### `src/`
 
-This is where most of your application code will live in. How to structure everything inside this directory is largely up to you; if you are using Vuex, you can consult the [recommendations for Vuex applications](http://vuex.vuejs.org/en/structure.html).
+这里是项目大多数的源代码。在官方模版的基础上，src／ 整合了 vuex、vue－router、vue－resource、vue-validator 的基本配置，可以直接使用。详情请看[组件](components.md)
 
 ### `static/`
 
-This directory is an escape hatch for static assets that you do not want to process with Webpack. They will be directly copied into the same directory where webpack-built assets are generated.
+这里包含了你不想通过 webpack 打包的静态资源。这些文件在 build 时候会直接复制到生产目录中。
 
-See [Handling Static Assets](static.md) for more details.
+详情请看[静态资源](static.md)。
 
 ### `test/unit`
 
-Contains unit test related files. See [Unit Testing](unit.md) for more details.
+包含了单元测试相关文件。详情请看[单元测试](unit.md)。
 
 ### `test/e2e`
 
-Contains e2e test related files. See [End-to-end Testing](e2e.md) for more details.
+包含了端到端测试相关文件。详情请看[端到端测试](e2e.md)。
 
 ### `index.html`
 
-This is the **template** `index.html` for our single page application. During development and builds, Webpack will generate assets, and the URLs for those generated assets will automatically injected into this template to render the final HTML.
+这是 SPA 的 `index.html` 的**模版**。在开发和生产过程中，webpack 将会自动将静态资源和 url 相关的静态资源注入到最终的 html 文件中。
 
 ### `package.json`
 
-The NPM package meta file that contains all the build dependencies and [build commands](commands.md).
+NPM 的源文件，包含了依赖列表和 [指令](commands.md)。
+
+

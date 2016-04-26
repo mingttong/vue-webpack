@@ -1,26 +1,25 @@
-# Build Commands
+# 指令
 
-All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/scripts).
+所有的开发之灵都包含在 [NPM Scripts](https://docs.npmjs.com/misc/scripts) 中。
 
 ### `npm run dev`
 
-> Starts a Node.js local development server. See [API Proxying During Development](proxy.md) for more details.
+> 开始一个 Node.js 本地开发服务。详情请看 [开发过程中的 API 代理](proxy.md)。
 
-- Webpack + `vue-loader` for single file Vue components.
-- State preserving hot-reload
-- State preserving compilation error overlay
-- Lint-on-save with ESLint
+- Webpack + `vue-loader` 开发 Vue components SPA
+- 热重载的数据持久化
+- 编译错误时的数据持久化
+- 保存时自动 ESLint
 - Source maps
 
 ### `npm run build`
 
-> Build assets for production. See [Integrating with Backend Framework](backend.md) for more details.
+> 编译生产环境静态资源。详情请看 [融合后台](backend.md)。
 
-- JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
-- HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
-- CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
-- All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
-- Also see [deployment notes](#how-do-i-deploy-built-assets-with-my-backend-framework).
+- JavaScript 通过 [UglifyJS](https://github.com/mishoo/UglifyJS2) 压缩。
+- HTML 通过 [html-minifier](https://github.com/kangax/html-minifier) 压缩。
+- 全部组件中的 CSS 会被剥离生成一个单独文件，并通过 [cssnano](https://github.com/ben-eb/cssnano) 压缩。
+- 所有的静态资源都带有自己的 hash 版本，并且超长缓存。生产环境的 `index.html` 会自动加入对应的 url 来引入静态资源。
 
 ### `npm run unit`
 
@@ -38,3 +37,5 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - Works with one command out of the box:
   - Selenium and chromedriver dependencies automatically handled.
   - Automatically spawns the Selenium server.
+
+

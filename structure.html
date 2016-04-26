@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Project Structure | Introduction</title>
+        <title>项目结构 | 介绍</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="1"
-        data-chapter-title="Project Structure"
+        data-chapter-title="项目结构"
         data-filepath="structure.md"
         data-basepath="."
-        data-revision="Tue Apr 26 2016 10:10:48 GMT+0800 (CST)"
+        data-revision="Tue Apr 26 2016 12:02:33 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -91,7 +91,7 @@
                         
                             <b>1.</b>
                         
-                        Project Structure
+                        项目结构
                     </a>
             
             
@@ -106,7 +106,7 @@
                         
                             <b>2.</b>
                         
-                        Build Commands
+                        命令
                     </a>
             
             
@@ -121,7 +121,7 @@
                         
                             <b>3.</b>
                         
-                        Linter Configuration
+                        代码质量 eslint
                     </a>
             
             
@@ -136,7 +136,7 @@
                         
                             <b>4.</b>
                         
-                        Handling Static Assets
+                        静态资源
                     </a>
             
             
@@ -151,7 +151,7 @@
                         
                             <b>5.</b>
                         
-                        Integrate with Backend Framework
+                        后台融合（未完成）
                     </a>
             
             
@@ -166,7 +166,7 @@
                         
                             <b>6.</b>
                         
-                        API Proxying During Development
+                        开发过程中的 API 代理
                     </a>
             
             
@@ -181,7 +181,7 @@
                         
                             <b>7.</b>
                         
-                        Unit Testing
+                        单元测试（未完成）
                     </a>
             
             
@@ -196,7 +196,7 @@
                         
                             <b>8.</b>
                         
-                        End-to-end Testing
+                        端到端测试（未完成）
                     </a>
             
             
@@ -211,7 +211,7 @@
                         
                             <b>9.</b>
                         
-                        Prerendering for SEO
+                        SEO 预渲染（未完成）
                     </a>
             
             
@@ -240,7 +240,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Introduction</a>
+        <a href="./" >介绍</a>
     </h1>
 </div>
 
@@ -250,7 +250,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="project-structure">Project Structure</h1>
+                        <h1 id="&#x9879;&#x76EE;&#x7ED3;&#x6784;">&#x9879;&#x76EE;&#x7ED3;&#x6784;</h1>
 <pre><code class="lang-bash">.
 &#x251C;&#x2500;&#x2500; config.js                   <span class="hljs-comment"># main project config</span>
 &#x251C;&#x2500;&#x2500; build/                      <span class="hljs-comment"># webpack config files</span>
@@ -279,22 +279,22 @@
 &#x2514;&#x2500;&#x2500; package.json                <span class="hljs-comment"># build scripts and dependencies</span>
 </code></pre>
 <h3 id="configjs"><code>config.js</code></h3>
-<p>This is the main configuration file that exposes some of the most common configuration options for the build setup. See <a href="proxy.html">API Proxying During Development</a> and <a href="backend.html">Integrating with Backend Framework</a> for more details.</p>
+<p>&#x8FD9;&#x662F;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x548C;&#x751F;&#x4EA7;&#x8BBE;&#x7F6E;&#x7684;&#x5927;&#x591A;&#x6570;&#x516C;&#x5171;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="proxy.html">&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684; API &#x4EE3;&#x7406;</a>&#x548C;<a href="backend.html">&#x878D;&#x5408;&#x540E;&#x53F0;</a>&#x3002;</p>
 <h3 id="build"><code>build/</code></h3>
-<p>This directory holds the actual configurations for both the development server and the production webpack build. Normally you don&apos;t need to touch these files unless you want to customize Webpack loaders, in which case you should probably look at <code>build/webpack.base.conf.js</code>.</p>
+<p>&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x5305;&#x542B;&#x4E86;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5B9E;&#x9645;&#x7684; webpack &#x914D;&#x7F6E;&#x3002;&#x901A;&#x5E38;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x60F3;&#x8981;&#x81EA;&#x5B9A;&#x4E49; webpack loaders&#xFF0C;&#x8FD9;&#x662F;&#x4F60;&#x4E5F;&#x8BB8;&#x9700;&#x8981;&#x770B;&#x4E00;&#x4E0B; <code>build/webpack.base.conf.js</code> &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
 <h3 id="src"><code>src/</code></h3>
-<p>This is where most of your application code will live in. How to structure everything inside this directory is largely up to you; if you are using Vuex, you can consult the <a href="http://vuex.vuejs.org/en/structure.html" target="_blank">recommendations for Vuex applications</a>.</p>
+<p>&#x8FD9;&#x91CC;&#x662F;&#x9879;&#x76EE;&#x5927;&#x591A;&#x6570;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x5B98;&#x65B9;&#x6A21;&#x7248;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;src&#xFF0F; &#x6574;&#x5408;&#x4E86; vuex&#x3001;vue&#xFF0D;router&#x3001;vue&#xFF0D;resource&#x3001;vue-validator &#x7684;&#x57FA;&#x672C;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="components.md">&#x7EC4;&#x4EF6;</a></p>
 <h3 id="static"><code>static/</code></h3>
-<p>This directory is an escape hatch for static assets that you do not want to process with Webpack. They will be directly copied into the same directory where webpack-built assets are generated.</p>
-<p>See <a href="static.html">Handling Static Assets</a> for more details.</p>
+<p>&#x8FD9;&#x91CC;&#x5305;&#x542B;&#x4E86;&#x4F60;&#x4E0D;&#x60F3;&#x901A;&#x8FC7; webpack &#x6253;&#x5305;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x5728; build &#x65F6;&#x5019;&#x4F1A;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x5230;&#x751F;&#x4EA7;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+<p>&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="static.html">&#x9759;&#x6001;&#x8D44;&#x6E90;</a>&#x3002;</p>
 <h3 id="testunit"><code>test/unit</code></h3>
-<p>Contains unit test related files. See <a href="unit.html">Unit Testing</a> for more details.</p>
+<p>&#x5305;&#x542B;&#x4E86;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="unit.html">&#x5355;&#x5143;&#x6D4B;&#x8BD5;</a>&#x3002;</p>
 <h3 id="teste2e"><code>test/e2e</code></h3>
-<p>Contains e2e test related files. See <a href="e2e.html">End-to-end Testing</a> for more details.</p>
+<p>&#x5305;&#x542B;&#x4E86;&#x7AEF;&#x5230;&#x7AEF;&#x6D4B;&#x8BD5;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="e2e.html">&#x7AEF;&#x5230;&#x7AEF;&#x6D4B;&#x8BD5;</a>&#x3002;</p>
 <h3 id="indexhtml"><code>index.html</code></h3>
-<p>This is the <strong>template</strong> <code>index.html</code> for our single page application. During development and builds, Webpack will generate assets, and the URLs for those generated assets will automatically injected into this template to render the final HTML.</p>
+<p>&#x8FD9;&#x662F; SPA &#x7684; <code>index.html</code> &#x7684;<strong>&#x6A21;&#x7248;</strong>&#x3002;&#x5728;&#x5F00;&#x53D1;&#x548C;&#x751F;&#x4EA7;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;webpack &#x5C06;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x548C; url &#x76F8;&#x5173;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6CE8;&#x5165;&#x5230;&#x6700;&#x7EC8;&#x7684; html &#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
 <h3 id="packagejson"><code>package.json</code></h3>
-<p>The NPM package meta file that contains all the build dependencies and <a href="commands.html">build commands</a>.</p>
+<p>NPM &#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x4F9D;&#x8D56;&#x5217;&#x8868;&#x548C; <a href="commands.html">&#x6307;&#x4EE4;</a>&#x3002;</p>
 
                     
                     </section>
@@ -308,7 +308,7 @@
         <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./commands.html" class="navigation navigation-next " aria-label="Next page: Build Commands"><i class="fa fa-angle-right"></i></a>
+        <a href="./commands.html" class="navigation navigation-next " aria-label="Next page: 命令"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
