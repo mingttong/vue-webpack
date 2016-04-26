@@ -10,7 +10,7 @@
                          @click="setCity1(key)"
                          :class="{'selected': key == city1}">
                         <div>
-                            {{key}}
+                            \{{key}}
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <div v-for="city in citys"
                              track-by="$index"
                              @click="setCity2(city[1][0], city[0])"
-                             :class="{'selected': city[1][0] == city2}">{{city[1][0]}}
+                             :class="{'selected': city[1][0] == city2}">\{{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                              v-if="city[2] == code1"
                              :class="{'selected': city[1][0] == city3}"
                              @click="setCity3(city[1][0], city[0])">
-                            {{city[1][0]}}
+                            \{{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                              v-if="city[2] == code2"
                              :class="{'selected': city[1][0] == city4}"
                              @click="setCity4(city[1][0], city[0])">
-                            {{city[1][0]}}
+                            \{{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                          class="road"
                          :class="{'selected': road[0] == code4}"
                          @click="setRoad(road[1], road[0])">
-                        {{road[1]}}
+                        \{{road[1]}}
                     </div>
                 </div>
             </div>

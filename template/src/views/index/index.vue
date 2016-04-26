@@ -1,5 +1,6 @@
 <template>
     <div>
+        <free-btn :text="'点击拖动'"></free-btn>
         <group :fixed="true">
             <btn :cut="1"
                  :text="'fixed btn'"
@@ -25,8 +26,18 @@
                         <span slot="unit">单位</span>
                     </ele>
                     <ele>
+                        <input type="tel"
+                               slot="right"
+                               placeholder="请输入电话"
+                               v-model="tel"
+                               v-validate:phone="validRules.phone">
+                        <codebtn :phone-num="tel"
+                                 :required="true"
+                                 :fn="getCode"></codebtn>
+                    </ele>
+                    <ele>
                         <div>地址</div>
-                        <div>{{address?address:'--请选择地址--'}}</div>
+                        <div>\{{address?address:'--请选择地址--'}}</div>
                     </ele>
                 </form>
             </validator>
@@ -52,7 +63,8 @@
     import ele from '../../components/ele'
     import group from '../../components/group'
     import more from '../../components/more'
-    import cityList from '../../components/cityList.vue'
+    import cityList from '../../components/cityList'
+    import codebtn from '../../components/codebtn'
     import utils from '../../tools/utils'
     import {
         validRules,
@@ -70,7 +82,8 @@
             return {
                 validRules,
                 username: '',
-                address: ''
+                address: '',
+                tel: ''
             }
         },
         computed: {},
@@ -80,7 +93,8 @@
             ele,
             group,
             more,
-            cityList
+            cityList,
+            codebtn
         },
         methods: {
             toValidate,
@@ -92,6 +106,9 @@
             },
             setAddress (address) {
                 this.address = address
+            },
+            getCode () {
+                utils.alert('获取验证码')
             }
         },
         validators: validators,
