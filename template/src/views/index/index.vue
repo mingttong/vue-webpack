@@ -1,5 +1,6 @@
 <template>
     <div>
+        <free-btn :text="'点击拖动'"></free-btn>
         <group :fixed="true">
             <btn :cut="1"
                  :text="'fixed btn'"
@@ -36,7 +37,7 @@
                     </ele>
                     <ele>
                         <div>地址</div>
-                        <div>{{address?address:'--请选择地址--'}}</div>
+                        <div>\{{address?address:'--请选择地址--'}}</div>
                     </ele>
                 </form>
             </validator>
