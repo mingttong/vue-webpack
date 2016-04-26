@@ -27,11 +27,11 @@
                     </ele>
                     <ele>
                         <input type="tel"
-                               slot="right"
                                placeholder="请输入电话"
                                v-model="tel"
                                v-validate:phone="validRules.phone">
                         <codebtn :phone-num="tel"
+                                 slot="right"
                                  :required="true"
                                  :fn="getCode"></codebtn>
                     </ele>
@@ -65,6 +65,7 @@
     import more from '../../components/more'
     import cityList from '../../components/cityList'
     import codebtn from '../../components/codebtn'
+    import freeBtn from '../../components/freeBtn'
     import utils from '../../tools/utils'
     import {
         validRules,
@@ -94,7 +95,8 @@
             group,
             more,
             cityList,
-            codebtn
+            codebtn,
+            freeBtn
         },
         methods: {
             toValidate,
