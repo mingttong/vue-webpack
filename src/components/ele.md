@@ -16,16 +16,23 @@ props: [
 
 ## 样式
 两端对齐。
+
 白色背景。
+
 上下 1px 线框。
+
 ![-w300](http://markdownpic.hq5544.com/2016-04-27-14617494980840.jpg)
 
 
 ## 用法
 组件引入。
+
 三个 slot：默认、right、unit（单位）。
+
 未插入 slot 舍弃。
+
 可嵌入 div、input、select、codeBtn。
+
 插入单独 input 元素，自动出现清空按钮。
 
 
