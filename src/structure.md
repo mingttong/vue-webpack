@@ -2,31 +2,31 @@
 
 ``` bash
 .
-├── config.js                   # main project config
-├── build/                      # webpack config files
+├── config.js                   # 项目配置文件
+├── build/                      # webpack 配置文件
 │   └── ...
 ├── src/
-│   ├── main.js                 # app entry file
-│   ├── App.vue                 # main app component
-│   ├── components/             # ui components
+│   ├── main.js                 # app 入口文件
+│   ├── App.vue                 # app 主组件
+│   ├── components/             # ui 组件
 │   │   └── ...
-│   └── assets/                 # module assets (processed by webpack)
+│   └── assets/                 # 模块静态资源，会被 webpack 打包
 │       └── ...
-├── static/                     # pure static assets (directly copied)
+├── static/                     # 纯静态资源，打包是直接被复制
 ├── test/
-│   └── unit/                   # unit tests
+│   └── unit/                   # 单元测试
 │   │   ├── specs/              # test spec files
-│   │   ├── index.js            # test build entry file
-│   │   └── karma.conf.js       # test runner config file
-│   └── e2e/                    # e2e tests
+│   │   ├── index.js            # 测试入口文件
+│   │   └── karma.conf.js       # 测试配置文件
+│   └── e2e/                    # 端到端测试
 │   │   ├── specs/              # test spec files
-│   │   ├── custom-assertions/  # custom assertions for e2e tests
-│   │   ├── runner.js           # test runner script
-│   │   └── nightwatch.conf.js  # test runner config file
-├── .babelrc                    # babel config
-├── .eslintrc.js                # eslint config
-├── index.html                  # index.html template
-└── package.json                # build scripts and dependencies
+│   │   ├── custom-assertions/  # 端到端的自定义断言
+│   │   ├── runner.js           # 测试脚本
+│   │   └── nightwatch.conf.js  # 测试配置文件
+├── .babelrc                    # babel 配置
+├── .eslintrc.js                # eslint 配置
+├── index.html                  # index.html 模版
+└── package.json                # 命令和依赖列表
 ```
 
 ### `config.js`

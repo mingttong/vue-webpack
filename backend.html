@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>后台融合（未完成） | 介绍</title>
+        <title>后台融合 | 介绍</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="5"
-        data-chapter-title="后台融合（未完成）"
+        data-chapter-title="后台融合"
         data-filepath="backend.md"
         data-basepath="."
-        data-revision="Tue Apr 26 2016 15:57:29 GMT+0800 (CST)"
+        data-revision="Wed Apr 27 2016 15:28:03 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -151,7 +151,7 @@
                         
                             <b>5.</b>
                         
-                        后台融合（未完成）
+                        后台融合
                     </a>
             
             
@@ -181,7 +181,7 @@
                         
                             <b>7.</b>
                         
-                        单元测试（未完成）
+                        单元测试（英文）
                     </a>
             
             
@@ -196,7 +196,7 @@
                         
                             <b>8.</b>
                         
-                        端到端测试（未完成）
+                        端到端测试（英文）
                     </a>
             
             
@@ -211,7 +211,7 @@
                         
                             <b>9.</b>
                         
-                        SEO 预渲染（未完成）
+                        SEO 预渲染
                     </a>
             
             
@@ -250,9 +250,9 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="integrating-with-backend-framework">Integrating with Backend Framework</h1>
-<p>If you are building a purely-static app (one that is deployed separately from the backend API), then you probably don&apos;t even need to edit <code>config.js</code>. However, if you want to integrate this template with an existing backend framework, e.g. Rails/Django/Laravel, which comes with their own project structures, you can edit <code>config.js</code> to directly generate front-end assets into your backend project.</p>
-<p>Let&apos;s take a look at the default <code>config.js</code>:</p>
+                        <h1 id="&#x548C;&#x540E;&#x53F0;&#x6846;&#x67B6;&#x878D;&#x5408;">&#x548C;&#x540E;&#x53F0;&#x6846;&#x67B6;&#x878D;&#x5408;</h1>
+<p>&#x5982;&#x679C;&#x4F60;&#x5728;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x7EAF;&#x9759;&#x6001; app&#xFF08;&#x548C;&#x540E;&#x53F0; API &#x72EC;&#x7ACB;&#x90E8;&#x7F72;&#xFF09;&#xFF0C;&#x4E5F;&#x8BB8;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x7F16;&#x8F91; <code>config.js</code>&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x5C06;&#x6A21;&#x7248;&#x878D;&#x5408;&#x5230;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x540E;&#x53F0;&#x6A21;&#x7248;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982; Rails/Django/Laravel&#xFF0C;&#x8FD9;&#x4E9B;&#x9879;&#x76EE;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7F16;&#x8F91; <code>config.js</code> &#x6765;&#x76F4;&#x63A5;&#x5C06;&#x524D;&#x7AEF;&#x8D44;&#x6E90;&#x6574;&#x5408;&#x8FDB;&#x540E;&#x53F0;&#x9879;&#x76EE;&#x4E2D;&#x3002;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x9ED8;&#x8BA4;&#x7684; <code>config.js</code>&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>)
 
 <span class="hljs-built_in">module</span>.exports = {
@@ -269,30 +269,33 @@
   }
 }
 </code></pre>
-<p>Inside the <code>build</code> section, we have the following options:</p>
+<p>&#x5728; <code>build</code> &#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x9879;&#xFF1A;</p>
 <h3 id="buildindex"><code>build.index</code></h3>
 <blockquote>
-<p>Must be an absolute path on your local file system.</p>
+<p>&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</p>
 </blockquote>
-<p>This is where the <code>index.html</code> (with injected asset URLs) will be generated.</p>
-<p>If you are using this template with a backend-framework, you can edit <code>index.html</code> accordingly and point this path to a view file rendered by your backend app, e.g. <code>app/views/layouts/application.html.erb</code> for a Rails app, or <code>resources/views/index.blade.php</code> for a Laravel app.</p>
+<p>&#x8FD9;&#x662F; <code>index.html</code>&#xFF08;&#x6CE8;&#x5165;&#x8D44;&#x6E90; url &#x7684;&#x6587;&#x4EF6;&#xFF09;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x5E26;&#x6709;&#x540E;&#x53F0;&#x6846;&#x67B6;&#x7684;&#x6A21;&#x7248;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;&#x76F8;&#x5E94;&#x7684; <code>index.html</code>&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x8DEF;&#x5F84;&#x6307;&#x5411;&#x540E;&#x53F0; app &#x6E32;&#x67D3;&#x7684;&#x89C6;&#x56FE;&#x3002;&#x4F8B;&#x5982;&#xFF1A;Rails app &#x7684; <code>app/views/layouts/application.html.erb</code>&#xFF0C;&#x6216;&#x8005; Laravel app &#x7684; <code>resources/views/index.blade.php</code>&#x3002;</p>
 <h3 id="buildassetsroot"><code>build.assetsRoot</code></h3>
 <blockquote>
-<p>Must be an absolute path on your local file system.</p>
+<p>&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</p>
 </blockquote>
-<p>This should point to the root directory that contains all the static assets for your app. For example, <code>public/</code> for both Rails/Laravel.</p>
+<p>&#x9700;&#x8981;&#x6307;&#x5411;&#x5305;&#x542B;&#x4F60;&#x7684; app &#x7684;&#x5168;&#x90E8;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x4F8B;&#x5982;&#xFF0C;Rails/Laravel &#x7684; <code>public/</code>&#x3002;</p>
 <h3 id="buildassetssubdirectory"><code>build.assetsSubDirectory</code></h3>
-<p>Nest webpack-generated assets under this directory in <code>build.assetsRoot</code>, so that they are not mixed with other files you may have in <code>build.assetsRoot</code>. For example, if <code>build.assetsRoot</code> is <code>/path/to/dist</code>, and <code>build.assetsSubDirectory</code> is <code>static</code>, then all Webpack assets will be generated in <code>path/to/dist/static</code>.</p>
-<p>This directory will be cleaned before each build, so it should only contain assets generated by the build.</p>
-<p>Files inside <code>static/</code> will be copied into this directory as-is during build. This means if you change this prefix, all your absolute URLs referencing files in <code>static/</code> will also need to be changed. See <a href="static.html">Handling Static Assets</a> for more details.</p>
+<p>&#x5728; <code>build.assetsRoot</code> &#x8DEF;&#x5F84;&#x4E0B;&#x9762;&#x751F;&#x6210; webpack &#x6253;&#x5305;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x9632;&#x6B62;&#x6587;&#x4EF6;&#x548C;&#x5176;&#x5B83;&#x5728; <code>build.assetsRoot</code> &#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x6DF7;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C; <code>build.assetsRoot</code> &#x8BBE;&#x7F6E;&#x6210; <code>/path/to/dist</code>&#xFF0C;<code>build.assetsSubDirectory</code> &#x8BBE;&#x7F6E;&#x6210; <code>static</code>&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x7684; webpack &#x6253;&#x5305;&#x540E;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4F1A;&#x751F;&#x6210;&#x5728; <code>path/to/dist/static</code> &#x8DEF;&#x5F84;&#x4E0B;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x5728;&#x6BCF;&#x6B21;&#x7F16;&#x8BD1;&#x524D;&#x90FD;&#x4F1A;&#x88AB;&#x6E05;&#x9664;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x5728; <code>static/</code> &#x5185;&#x7684;&#x6587;&#x4EF6;&#x5728;&#x6253;&#x5305;&#x65F6;&#x5C06;&#x4F1A;&#x76F4;&#x63A5;&#x88AB;&#x590D;&#x5236;&#x8FDB;&#x5165;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x4E0B;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6539;&#x53D8;&#x4E86;&#x8FD9;&#x4E2A;&#x524D;&#x7F00;&#xFF0C;&#x6240;&#x6709;&#x6307;&#x5411; <code>static/</code> &#x5185;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x4E5F;&#x90FD;&#x9700;&#x8981;&#x6539;&#x53D8;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B; <a href="static.html">&#x9759;&#x6001;&#x6587;&#x4EF6;&#x7684;&#x5904;&#x7406;</a>&#x3002;</p>
 <h3 id="buildassetspublicpath"><code>build.assetsPublicPath</code></h3>
-<p>This should be the URL path where your <code>build.assetsRoot</code> will be served from over HTTP. In most cases, this will be root (<code>/</code>). Only change this if your backend framework serves static assets with a path prefix. Internally, this is passed to Webpack as <code>output.publicPath</code>.</p>
+<p>&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x662F; <code>build.assetsRoot</code> &#x901A;&#x8FC7; HTTP &#x670D;&#x52A1;&#x5206;&#x53D1;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x5982;&#x679C;&#x9879;&#x76EE;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF09;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x6839;&#x76EE;&#x5F55;(<code>/</code>)&#x3002;&#x53EA;&#x6709;&#x5F53;&#x540E;&#x53F0;&#x6846;&#x67B6;&#x5206;&#x53D1;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x5E26;&#x6709;&#x524D;&#x7F00;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x9700;&#x8981;&#x6539;&#x53D8;&#x3002;&#x5728;&#x5185;&#x90E8;&#x5904;&#x7406;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x5C06;&#x4F1A;&#x4F20;&#x9012;&#x7ED9; webpack &#x7684; <code>output.publicPath</code>&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x90E8;&#x7F72;&#x5728;&#x6D4B;&#x8BD5;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x4E0D;&#x662F;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF09;&#xFF0C;&#x5F88;&#x591A;&#x9879;&#x76EE;&#x5171;&#x7528;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x7ED9;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x914D;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x9879;&#x76EE;&#x5165;&#x53E3;&#x662F;&#x6307;&#x5411;&#x4E00;&#x4E2A; html &#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x4EE5; &#xFF0F; &#x7ED3;&#x5C3E;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>./</code>&#x3002;</p>
+<h3 id="devassetspublicpath"><code>dev.assetsPublicPath</code></h3>
+<p>&#x7531;&#x4E8E;&#x4E0A;&#x4E00;&#x6761;&#x6240;&#x8FF0;&#x539F;&#x56E0;&#xFF0C;&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x4E3A; <code>/</code>&#xFF0C;&#x5373;&#x5B98;&#x65B9;&#x6A21;&#x7248;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x7528;&#x4E8E;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x3002;</p>
 <h3 id="buildproductionsourcemap"><code>build.productionSourceMap</code></h3>
-<p>Whether to generate source maps for production build.</p>
+<p>&#x662F;&#x5426;&#x4E3A;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x751F;&#x6210; source maps&#x3002;</p>
 <h3 id="devport"><code>dev.port</code></h3>
-<p>Specify the port for the dev server to listen to.</p>
+<p>&#x672C;&#x5730;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x8981;&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#x3002;</p>
 <h3 id="devproxytable"><code>dev.proxyTable</code></h3>
-<p>Define proxy rules for the dev server. See <a href="proxy.html">API Proxying During Development</a> for more details.</p>
+<p>&#x5B9A;&#x4E49;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x7684;&#x4EE3;&#x7406;&#x89C4;&#x5219;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="proxy.html">&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684; API &#x4EE3;&#x7406;</a></p>
 
                     
                     </section>

@@ -53,7 +53,7 @@
         data-chapter-title="项目结构"
         data-filepath="structure.md"
         data-basepath="."
-        data-revision="Tue Apr 26 2016 15:57:29 GMT+0800 (CST)"
+        data-revision="Wed Apr 27 2016 15:28:03 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -151,7 +151,7 @@
                         
                             <b>5.</b>
                         
-                        后台融合（未完成）
+                        后台融合
                     </a>
             
             
@@ -181,7 +181,7 @@
                         
                             <b>7.</b>
                         
-                        单元测试（未完成）
+                        单元测试（英文）
                     </a>
             
             
@@ -196,7 +196,7 @@
                         
                             <b>8.</b>
                         
-                        端到端测试（未完成）
+                        端到端测试（英文）
                     </a>
             
             
@@ -211,7 +211,7 @@
                         
                             <b>9.</b>
                         
-                        SEO 预渲染（未完成）
+                        SEO 预渲染
                     </a>
             
             
@@ -252,31 +252,31 @@
                     
                         <h1 id="&#x9879;&#x76EE;&#x7ED3;&#x6784;">&#x9879;&#x76EE;&#x7ED3;&#x6784;</h1>
 <pre><code class="lang-bash">.
-&#x251C;&#x2500;&#x2500; config.js                   <span class="hljs-comment"># main project config</span>
-&#x251C;&#x2500;&#x2500; build/                      <span class="hljs-comment"># webpack config files</span>
+&#x251C;&#x2500;&#x2500; config.js                   <span class="hljs-comment"># &#x9879;&#x76EE;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+&#x251C;&#x2500;&#x2500; build/                      <span class="hljs-comment"># webpack &#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
 &#x2502;   &#x2514;&#x2500;&#x2500; ...
 &#x251C;&#x2500;&#x2500; src/
-&#x2502;   &#x251C;&#x2500;&#x2500; main.js                 <span class="hljs-comment"># app entry file</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; App.vue                 <span class="hljs-comment"># main app component</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; components/             <span class="hljs-comment"># ui components</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; main.js                 <span class="hljs-comment"># app &#x5165;&#x53E3;&#x6587;&#x4EF6;</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; App.vue                 <span class="hljs-comment"># app &#x4E3B;&#x7EC4;&#x4EF6;</span>
+&#x2502;   &#x251C;&#x2500;&#x2500; components/             <span class="hljs-comment"># ui &#x7EC4;&#x4EF6;</span>
 &#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; ...
-&#x2502;   &#x2514;&#x2500;&#x2500; assets/                 <span class="hljs-comment"># module assets (processed by webpack)</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; assets/                 <span class="hljs-comment"># &#x6A21;&#x5757;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x4F1A;&#x88AB; webpack &#x6253;&#x5305;</span>
 &#x2502;       &#x2514;&#x2500;&#x2500; ...
-&#x251C;&#x2500;&#x2500; static/                     <span class="hljs-comment"># pure static assets (directly copied)</span>
+&#x251C;&#x2500;&#x2500; static/                     <span class="hljs-comment"># &#x7EAF;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x6253;&#x5305;&#x662F;&#x76F4;&#x63A5;&#x88AB;&#x590D;&#x5236;</span>
 &#x251C;&#x2500;&#x2500; <span class="hljs-built_in">test</span>/
-&#x2502;   &#x2514;&#x2500;&#x2500; unit/                   <span class="hljs-comment"># unit tests</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; unit/                   <span class="hljs-comment"># &#x5355;&#x5143;&#x6D4B;&#x8BD5;</span>
 &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; specs/              <span class="hljs-comment"># test spec files</span>
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; index.js            <span class="hljs-comment"># test build entry file</span>
-&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; karma.conf.js       <span class="hljs-comment"># test runner config file</span>
-&#x2502;   &#x2514;&#x2500;&#x2500; e2e/                    <span class="hljs-comment"># e2e tests</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; index.js            <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x5165;&#x53E3;&#x6587;&#x4EF6;</span>
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; karma.conf.js       <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+&#x2502;   &#x2514;&#x2500;&#x2500; e2e/                    <span class="hljs-comment"># &#x7AEF;&#x5230;&#x7AEF;&#x6D4B;&#x8BD5;</span>
 &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; specs/              <span class="hljs-comment"># test spec files</span>
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; custom-assertions/  <span class="hljs-comment"># custom assertions for e2e tests</span>
-&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; runner.js           <span class="hljs-comment"># test runner script</span>
-&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; nightwatch.conf.js  <span class="hljs-comment"># test runner config file</span>
-&#x251C;&#x2500;&#x2500; .babelrc                    <span class="hljs-comment"># babel config</span>
-&#x251C;&#x2500;&#x2500; .eslintrc.js                <span class="hljs-comment"># eslint config</span>
-&#x251C;&#x2500;&#x2500; index.html                  <span class="hljs-comment"># index.html template</span>
-&#x2514;&#x2500;&#x2500; package.json                <span class="hljs-comment"># build scripts and dependencies</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; custom-assertions/  <span class="hljs-comment"># &#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x65AD;&#x8A00;</span>
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; runner.js           <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x811A;&#x672C;</span>
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; nightwatch.conf.js  <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+&#x251C;&#x2500;&#x2500; .babelrc                    <span class="hljs-comment"># babel &#x914D;&#x7F6E;</span>
+&#x251C;&#x2500;&#x2500; .eslintrc.js                <span class="hljs-comment"># eslint &#x914D;&#x7F6E;</span>
+&#x251C;&#x2500;&#x2500; index.html                  <span class="hljs-comment"># index.html &#x6A21;&#x7248;</span>
+&#x2514;&#x2500;&#x2500; package.json                <span class="hljs-comment"># &#x547D;&#x4EE4;&#x548C;&#x4F9D;&#x8D56;&#x5217;&#x8868;</span>
 </code></pre>
 <h3 id="configjs"><code>config.js</code></h3>
 <p>&#x8FD9;&#x662F;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x548C;&#x751F;&#x4EA7;&#x8BBE;&#x7F6E;&#x7684;&#x5927;&#x591A;&#x6570;&#x516C;&#x5171;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="proxy.html">&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684; API &#x4EE3;&#x7406;</a>&#x548C;<a href="backend.html">&#x878D;&#x5408;&#x540E;&#x53F0;</a>&#x3002;</p>

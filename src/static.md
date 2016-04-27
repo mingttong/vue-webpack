@@ -1,30 +1,30 @@
-# Handing Static Assets
+# 处理静态资源
 
-You will notice in the project structure we have two directories for static assets: `src/assets` and `static/`. What is the difference between them?
+你会注意到，项目中我们有两个目录存放静态资源：`src/assets` 和 `static/`。这两者有什么区别呢？
 
-### Webpacked Assets
+### 打包资源
 
-To answer this question, we first need to understand how Webpack deals with static assets. In `*.vue` components, all your templates and CSS are parsed by `vue-html-loader` and `css-loader` to look for asset URLs. For example, in `<img src="./logo.png">` and `background: url(./logo.png)`, `"./logo.png"` is a relative asset path and will be **resolved by Webpack as a module dependency**.
+为了回答这个问题，我们首先要理解 webpack 如何处理静态资源。在 `vue` 组件中，所有的模版和 CSS 都是通过 `vue-html-loader` 和 `css-loader` 分析静态资源 URL。例如，在 `<img src="./logo.png">` 和 `background: url(./logo.png)`，`"./logo.png"` 是一个相对路径，**会被 webpack 作为依赖模块处理**。
 
-Because `logo.png` is not JavaScript, when treated as a module dependency, we need to use `url-loader` and `file-loader` to process it. This boilerplate has already configured these loaders for you, so you basically get features such as filename fingerprinting and conditional bas64 inlining for free, while being able to use relative/module paths without worrying about deployment.
+因为 `logo.png` 不是 JavaScript，当作为一个依赖模块处理的时候，我们需要使用 `url-loader` 和 `file-loader` 来处理。这个模版已经为你配置好这些 loader，因此你可以直接使用例如文件名指纹和内嵌的 base64 代码等特性，在使用相对路径的某块的时候也不用担心部署问题。
 
-Since these assets may be inlined/copied/renamed during build, they are essentially part of your source code. This is why it is recommended to place Webpack-processed static assets inside `/src`, along side other source files. In fact, you don't even have to put them all in `/src/assets`: you can organize them based on the module/component using them. For example, you can put each component in its own directory, with its static assets right next to it.
+因为 build 过程中，这些资源也许会被内嵌／复制／重命名，它们本质上是源代码的一部分。这就是为什么我们建议把要打包的静态资源放在 `/src` 中，和其它源代码并列。事实上，你甚至不用把全部静态资源放在 `/src/assets`：捏可以在模块／组件的基础上组织它们。例如，你可以为每一个组件自己建一个文件夹，让静态资源紧挨着它。
 
-### Asset Resolving Rules
+### 资源路径的处理
 
-- **Relative URLs**, e.g. `./assets/logo.png` will be interpreted as a module dependency. They will be replaced with a auto-generated URL based on your Webpack output configuration.
+- **相对路径**，例如，`./assets/logo.png` 将会被解析成依赖模块。它们将会被基于 webpack 输出配置所自动生成的 URL 所代替。
 
-- **Non-prefixed URLs**, e.g. `assets/logo.png` will be treated the same as the relative URLs and translated into `./assets/logo.png`.
+- **无前缀 URL**，例如，`assets/logo.png` 将会被视为相对路径，并且变成 `./assets/logo.png`。
 
-- **URLs prefixed with `~`** are treated as a module request, similar to `require('some-module/image.png')`. You need to use this prefix if you want to leverage Webpack's module resolving configurations. For example if you have a resolve alias for `assets`, you need to use `<img src="~assets/logo.png">` to ensure that alias is respected.
+- **带有 `~` 前缀的 URL** 将会被视为依赖模块的请求，类似于 `require('some-module/image.png')`。如果你想要让 webpack 将它作为模块处理，可以使用这个前缀。例如，如果你想要用 `assets` 作为 alias，你需要使用 `<img src="~assets/logo.png">` 来确保 alias 可以使用。
 
-- **Root-relative URLs**, e.g. `/assets/logo.png` are not processed at all.
+- **相对跟目录的 URL**，例如，`/assets/logo.png` 完全不会被 webpack 处理。
 
-### "Real" Static Assets
+### “真正的”静态资源
 
-In comparison, files in `static/` are not processed by Webpack at all: they are directly copied to their final destination as-is, with the same filename. You must reference these files using absolute paths, which is determined by joining `build.assetsPublicPath` and `build.assetsSubDirectory` in `config.js`.
+相比之下，`static/` 完全不会被 webpack 处理：它们会直接原样的复制到目标位置，也不更改文件名。你必须根据 `config.js` 文件中 `build.assetsPublicPath` 和 `build.assetsSubDirectory`，用绝对路径饮用这些文件。
 
-As an example, with the following default values:
+假设一个带有如下默认配置的例子：
 
 ``` js
 // config.js
@@ -37,6 +37,8 @@ module.exports = {
 }
 ```
 
-Any file placed in `static/` should be referenced using the absolute URL `/static/[filename]`. If you change `assetSubDirectory` to `assets`, then these URLs will need to be changed to `/assets/[filename]`.
+存放在 `static/` 中的文件应该用绝对路径 `/static/[filename]` 来引用。如果将 `assetSubDirectory` 的值改成 `assets`，那么这些 URL 将会变成 `/assets/[filename]`。
 
-We will learn more about the config file in the [next section](backend.md).
+我们将会在 [下一节](backend.md) 了解更多配置。
+
+

@@ -53,7 +53,7 @@
         data-chapter-title="代码质量 eslint"
         data-filepath="linter.md"
         data-basepath="."
-        data-revision="Tue Apr 26 2016 15:57:29 GMT+0800 (CST)"
+        data-revision="Wed Apr 27 2016 15:28:03 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -151,7 +151,7 @@
                         
                             <b>5.</b>
                         
-                        后台融合（未完成）
+                        后台融合
                     </a>
             
             
@@ -181,7 +181,7 @@
                         
                             <b>7.</b>
                         
-                        单元测试（未完成）
+                        单元测试（英文）
                     </a>
             
             
@@ -196,7 +196,7 @@
                         
                             <b>8.</b>
                         
-                        端到端测试（未完成）
+                        端到端测试（英文）
                     </a>
             
             
@@ -211,7 +211,7 @@
                         
                             <b>9.</b>
                         
-                        SEO 预渲染（未完成）
+                        SEO 预渲染
                     </a>
             
             
@@ -250,22 +250,20 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="linter-configuration">Linter Configuration</h1>
-<p>This boilerplate uses <a href="http://eslint.org/" target="_blank">ESLint</a> as the linter, and uses the <a href="https://github.com/feross/standard/blob/master/RULES.md" target="_blank">Standard</a> preset with some small customizations.</p>
-<p>If you are not happy with the default linting rules, you have several options:</p>
+                        <h1 id="&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x914D;&#x7F6E;">&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x914D;&#x7F6E;</h1>
+<p>&#x8FD9;&#x4E2A;&#x6A21;&#x7248;&#x4F7F;&#x7528;&#x4E86; <a href="http://eslint.org/" target="_blank">ESLint</a> &#x4F5C;&#x4E3A;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E86; <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank">airbnb</a> &#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x4E14;&#x5E26;&#x6709;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x4E0D;&#x4E60;&#x60EF;&#xFF0C;&#x4F60;&#x6709;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x9879;&#xFF1A;</p>
 <ol>
-<li><p>Overwrite individual rules in <code>.eslintrc.js</code>. For example, you can add the following rule to enforce semicolons instead of omitting them:</p>
+<li><p>&#x5728; <code>.eslintrc.js</code> &#x6539;&#x5199;&#x5355;&#x72EC;&#x7684;&#x89C4;&#x5219;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x5165;&#x4E0B;&#x9762;&#x7684;&#x89C4;&#x5219;&#x6765;&#x5F3A;&#x5236;&#x4EE5;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-string">&quot;semi&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;always&quot;</span>]
 </code></pre>
 </li>
-<li><p>Remove the <code>extends: &apos;standard&apos;</code> line in <code>.eslintrc.js</code> and use a completely custom eslint config. See <a href="http://eslint.org/docs/user-guide/configuring" target="_blank">ESLint documentation</a> for more details.</p>
+<li><p>&#x5728; <code>.eslintrc.js</code> &#x79FB;&#x9664; <code>extends: &apos;standard&apos;</code> &#x7136;&#x540E;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x81EA;&#x5B9A;&#x4E49;&#x7684; eslint &#x914D;&#x7F6E;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x770B; <a href="http://eslint.org/docs/user-guide/configuring" target="_blank">ESLint documentation</a>&#x3002;</p>
 </li>
-<li><p>Use a different ESLint preset, for example <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank">eslint-config-airbnb</a>.</p>
-</li>
-<li><p>Disable linting altogether: comment out the <code>module.preLoaders</code> block in <code>build/webpack.base.conf.js</code>.</p>
-<p>You will also need to disable linting if you are using a compile-to-JavaScript language, e.g. CoffeeScript.</p>
+<li><p>&#x5B8C;&#x5168;&#x7981;&#x7528; eslint&#xFF1A;&#x5728; <code>build/webpack.base.conf.js</code> &#x4E2D;&#x6CE8;&#x91CA;&#x6389; <code>module.preLoaders</code> &#x6A21;&#x5757;&#x3002;</p>
 </li>
 </ol>
+<p>&#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x53EF;&#x7F16;&#x8BD1;&#x7684; js &#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;CoffeeScript&#xFF0C;&#x4F60;&#x540C;&#x6837;&#x9700;&#x8981;&#x7981;&#x7528; eslint&#x3002;</p>
 
                     
                     </section>

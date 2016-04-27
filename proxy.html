@@ -53,7 +53,7 @@
         data-chapter-title="开发过程中的 API 代理"
         data-filepath="proxy.md"
         data-basepath="."
-        data-revision="Tue Apr 26 2016 15:57:29 GMT+0800 (CST)"
+        data-revision="Wed Apr 27 2016 15:28:03 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -151,7 +151,7 @@
                         
                             <b>5.</b>
                         
-                        后台融合（未完成）
+                        后台融合
                     </a>
             
             
@@ -181,7 +181,7 @@
                         
                             <b>7.</b>
                         
-                        单元测试（未完成）
+                        单元测试（英文）
                     </a>
             
             
@@ -196,7 +196,7 @@
                         
                             <b>8.</b>
                         
-                        端到端测试（未完成）
+                        端到端测试（英文）
                     </a>
             
             
@@ -211,7 +211,7 @@
                         
                             <b>9.</b>
                         
-                        SEO 预渲染（未完成）
+                        SEO 预渲染
                     </a>
             
             
@@ -250,15 +250,15 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="api-proxying-during-development">API Proxying During Development</h1>
-<p>When integrating this boilerplate with an existing backend, a common need is to access the backend API when using the dev server. To achieve that, we can run the dev server and the API backend side-by-side (or remotely), and let the dev server proxy all API requests to the actual backend.</p>
-<p>To configure the proxy rules, edit <code>dev.proxyTable</code> option in <code>config.js</code>. The dev server is using <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank">http-proxy-middleware</a> for proxying, so you should refer to its docs for detailed usage. But here&apos;s a simple example:</p>
+                        <h1 id="&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;-api-&#x4EE3;&#x7406;">&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684; API &#x4EE3;&#x7406;</h1>
+<p>&#x5F53;&#x5C06;&#x5F53;&#x524D;&#x7684;&#x6A21;&#x7248;&#x548C;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x540E;&#x53F0;&#x6A21;&#x7248;&#x8FDB;&#x884C;&#x878D;&#x5408;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x516C;&#x5171;&#x9700;&#x6C42;&#x5C31;&#x662F;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x65F6;&#x63A5;&#x5165;&#x540E;&#x53F0; API&#x3002;&#x4E3A;&#x4E86;&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x548C; side-by-side &#x6216;&#x8005;&#x8FDC;&#x7A0B;&#x7684;&#x540E;&#x53F0; API&#xFF0C;&#x5E76;&#x4E14;&#x8BA9;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x4EE3;&#x7406;&#x5168;&#x90E8;&#x7684;&#x5B9E;&#x9645;&#x540E;&#x53F0; API &#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x5728; <code>config.js</code> &#x5185;&#x7F16;&#x8F91; <code>dev.proxyTable</code> &#x6765;&#x914D;&#x7F6E;&#x4EE3;&#x7406;&#x89C4;&#x5219;&#x3002;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528; <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank">http-proxy-middleware</a> &#x8FDB;&#x884C;&#x4EE3;&#x7406;&#xFF0C;&#x56E0;&#x6B64;&#x4F60;&#x5E94;&#x8BE5;&#x53C2;&#x8003;&#x4E00;&#x4E0B;&#x6587;&#x6863;&#x6765;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x7528;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x6709;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-js"><span class="hljs-comment">// config.js</span>
 <span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-comment">// ...</span>
   dev: {
     proxyTable: {
-      <span class="hljs-comment">// proxy all requests starting with /api to jsonplaceholder</span>
+      <span class="hljs-comment">// &#x5C06;&#x6240;&#x6709;&#x4EE5; /api &#x5F00;&#x5934;&#x7684;&#x8BF7;&#x6C42;&#x901A;&#x8FC7; jsonplaceholder &#x4EE3;&#x7406;</span>
       <span class="hljs-string">&apos;/api&apos;</span>: {
         target: <span class="hljs-string">&apos;http://jsonplaceholder.typicode.com&apos;</span>,
         changeOrigin: <span class="hljs-literal">true</span>,
@@ -270,7 +270,7 @@
   }
 }
 </code></pre>
-<p>The above example will proxy the request <code>/api/posts/1</code> to <code>http://jsonplaceholder.typicode.com/posts/1</code>.</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x5C06; <code>/api/posts/1</code> &#x7528; <code>http://jsonplaceholder.typicode.com/posts/1</code> &#x4EE3;&#x7406;&#x3002;</p>
 
                     
                     </section>
@@ -281,10 +281,10 @@
         </div>
 
         
-        <a href="./backend.html" class="navigation navigation-prev " aria-label="Previous page: 后台融合（未完成）"><i class="fa fa-angle-left"></i></a>
+        <a href="./backend.html" class="navigation navigation-prev " aria-label="Previous page: 后台融合"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./unit.html" class="navigation navigation-next " aria-label="Next page: 单元测试（未完成）"><i class="fa fa-angle-right"></i></a>
+        <a href="./unit.html" class="navigation navigation-next " aria-label="Next page: 单元测试（英文）"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

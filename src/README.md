@@ -2,6 +2,8 @@
 
 这是一个基于 vue 官方 webpack 模版进行修改的项目。从我们公司实际项目中剥离出来的基本组件、工具、和基本配置的集合。
 
+项目地址：[vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+
 这个项目只包含了基础的组件，很少涉及样式。
 今后还会继续添加组件库。
 

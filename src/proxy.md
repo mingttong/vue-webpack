@@ -1,8 +1,8 @@
-# API Proxying During Development
+# 开发过程中的 API 代理
 
-When integrating this boilerplate with an existing backend, a common need is to access the backend API when using the dev server. To achieve that, we can run the dev server and the API backend side-by-side (or remotely), and let the dev server proxy all API requests to the actual backend.
+当将当前的模版和已经存在的后台模版进行融合时，一个公共需求就是本地开发时接入后台 API。为了这样，我们可以运行开发服务和 side-by-side 或者远程的后台 API，并且让开发服务代理全部的实际后台 API 请求。
 
-To configure the proxy rules, edit `dev.proxyTable` option in `config.js`. The dev server is using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) for proxying, so you should refer to its docs for detailed usage. But here's a simple example:
+在 `config.js` 内编辑 `dev.proxyTable` 来配置代理规则。开发服务器使用 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) 进行代理，因此你应该参考一下文档来了解更多用法。下面有一个简单示例：
 
 ``` js
 // config.js
@@ -10,7 +10,7 @@ module.exports = {
   // ...
   dev: {
     proxyTable: {
-      // proxy all requests starting with /api to jsonplaceholder
+      // 将所有以 /api 开头的请求通过 jsonplaceholder 代理
       '/api': {
         target: 'http://jsonplaceholder.typicode.com',
         changeOrigin: true,
@@ -23,4 +23,6 @@ module.exports = {
 }
 ```
 
-The above example will proxy the request `/api/posts/1` to `http://jsonplaceholder.typicode.com/posts/1`.
+上面的例子中将 `/api/posts/1` 用 `http://jsonplaceholder.typicode.com/posts/1` 代理。
+
+

@@ -23,19 +23,19 @@
 
 ### `npm run unit`
 
-> Run unit tests in PhantomJS with [Karma](http://karma-runner.github.io/0.13/index.html). See [Unit Testing](unit.md) for more details.
+> 在 PhantomJS 通过 [Karma](http://karma-runner.github.io/0.13/index.html) 运行单元测试。详情请看 [单元测试](unit.md)。
 
-- Supports ES2015 in test files.
-- Supports all webpack loaders.
+- 文件支持 ES2015。
+- 支持所有的 webpack loaders.
 - Easy [mock injection](http://vuejs.github.io/vue-loader/workflow/testing-with-mocks.html).
 
 ### `npm run e2e`
 
-> Run end-to-end tests with [Nightwatch](http://nightwatchjs.org/). See [End-to-end Testing](e2e.md) for more details.
+> 通过 [Nightwatch](http://nightwatchjs.org/) 运行端到端测试。详情请看 [端到端测试](e2e.md)。
 
-- Run tests in multiple browsers in parallel.
-- Works with one command out of the box:
-  - Selenium and chromedriver dependencies automatically handled.
-  - Automatically spawns the Selenium server.
+- 同时在浏览器运行多个测试。
+- 模拟器外一键运行：
+  - 自动安装 Selenium 和 chromedriver 依赖。
+  - 自动运行（spawn） Selenium 服务。
 
 
