@@ -62,7 +62,7 @@
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
-    a:matches(:link, :visited, :hover, :active) {
+    a:link, a:visited, a:hover, a:active {
         text-decoration: none;
         color: inherit;
         outline: 0;
