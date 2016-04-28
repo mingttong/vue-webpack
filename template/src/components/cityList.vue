@@ -227,7 +227,7 @@
     }
 
     .selected {
-        background-color: #efefef;
+        background-color: var(--bodyColor);
     }
 
     .title {

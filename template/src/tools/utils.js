@@ -43,7 +43,9 @@ const utils = {
     },
     ajaxJsonp (url, param) {
         return new Promise((resolve) => {
+            toggleLoading(store, true)
             Vue.http.jsonp(url, param).then((response) => {
+                toggleLoading(store, false)
                 resolve(response.data)
             })
         })

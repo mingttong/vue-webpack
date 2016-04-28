@@ -1,7 +1,8 @@
 <template>
     <div id="backdrop"
          v-show="backdropShow"
-         transition="fade"></div>
+         transition="fade"
+         @touchmove.stop.prevent="touchmove()"></div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -17,7 +18,9 @@
             return {}
         },
         computed: {},
-        methods: {},
+        methods: {
+            touchmove () {}
+        },
         events: {},
         created () {
         },
