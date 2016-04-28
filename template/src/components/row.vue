@@ -69,7 +69,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-bottom: 1px solid #d5d5d6;
+        border-bottom: 1px solid var(--borderColor);
         position: absolute;
         bottom: -1px;
         left: 0;

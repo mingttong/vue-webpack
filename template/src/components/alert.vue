@@ -151,7 +151,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-top: 1px solid #d5d5d6;
+        border-top: 1px solid var(--borderColor);
         transform: scaleY(.5);
         transform-origin: 0 0;
         position: absolute;
@@ -164,9 +164,14 @@
         flex: 1;
     }
 
-    button:active {
-        color: rgba(0, 0, 0, .6);
-        background-color: #f7f7f7;
+    button:active::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, .1);
     }
 
     .content {

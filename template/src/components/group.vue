@@ -74,7 +74,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-top: 1px solid #d5d5d6;
+        border-top: 1px solid var(--borderColor);
         position: absolute;
         top: 0;
         left: 0;

@@ -6,7 +6,8 @@
             <div></div>
         </div>
         <div v-show="show"
-             id="loading-drop"></div>
+             id="loading-drop"
+             @touchmove.stop.prevent="touchmove()"></div>
     </div>
 </template>
 
@@ -24,7 +25,9 @@
         },
         computed: {},
         components: {},
-        methods: {},
+        methods: {
+            touchmove () {}
+        },
         events: {},
         created () {
         },
@@ -43,23 +46,21 @@
     }
 
     #loading > div {
-        background: linear-gradient(to right, #FF973A 40%, #ED594E 50%, #FF973A 60%);
+        background: linear-gradient(to right, var(--minorColor) 35%, var(--linkColor) 50%, var(--minorColor) 65%);
         width: 200%;
         height: 3px;
         animation-name: loading;
         animation-duration: 2s;
         animation-iteration-count: infinite;
+        transform: translateX(-100%);
     }
 
     @keyframes loading {
         0% {
-            transform: translateX(-50%);
-        }
-        50% {
-            transform: translateX(0);
+            transform: translateX(-65%);
         }
         100% {
-            transform: translateX(-50%);
+            transform: translateX(15%);
         }
     }
 

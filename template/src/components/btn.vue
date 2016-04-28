@@ -64,7 +64,7 @@
 
 <style scoped>
     button {
-        color: #666;
+        color: var(--mainTextColor);
     }
 
     button::before {
@@ -75,7 +75,7 @@
         left: -50%;
         top: -50%;
         transform: scale(.5);
-        border: 2px solid #666;
+        border: 2px solid var(--mainTextColor);
     }
 
     .disabled,
@@ -86,6 +86,7 @@
         cursor: not-allowed;
     }
 
+    .disabled::after,
     .disabled::before,
     .alert::before {
         display: none !important;
@@ -93,7 +94,7 @@
 
     .warning {
         background-color: #fff;
-        color: #FFC100;
+        color: var(--minorColor);
     }
 
     .warning::before {
@@ -104,39 +105,30 @@
         left: -50%;
         top: -50%;
         transform: scale(.5);
-        border: 2px solid #FFC100;
+        border: 2px solid var(--minorColor);
     }
 
     .alert {
-        background-color: #FFC100;
+        background-color: var(--minorColor);
         color: #fff;
-    }
-
-    :active {
-        color: #666;
-        background-color: #f8f8f8;
-    }
-
-    .warning:active {
-        color: #FFC100;
-    }
-
-    .alert:active {
-        color: hsla(0, 0%, 100%, .4);
-        background-color: #E2AB00;
     }
 
     .next {
         color: #fff;
-        background-color: #75D3BB;
+        background-color: var(--mainColor);
     }
 
     .next::before {
         display: none;
     }
 
-    .next:active {
-        color: hsla(0, 0%, 100%, .4);
-        background-color: #5D9E8E;
+    :active::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, .1);
     }
 </style>

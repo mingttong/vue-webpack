@@ -36,13 +36,24 @@
 
 <style>
     /* 这里写全局样式 */
+    :root {
+        --mainColor: #75D3BB; /* 主色 */
+        --minorColor: #FFC100; /* 副色 */
+        --bodyColor: #efefef; /* body 背景色 */
+        --borderColor: #d5d5d6; /* 线条颜色 */
+        --mainTextColor: #666; /* 基本文字颜色 */
+        --strongTextColor: #333; /* 强调文字颜色 */
+        --tipColor: #888; /* 提示文字颜色 */
+        --linkColor: #FF5E38; /* 链接文字颜色 */
+    }
+
     html, body {
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         margin: 0;
         padding: 0;
-        color: #333;
+        color: var(--strongTextColor);
         -webkit-user-select: none;
-        background-color: #efefef;
+        background-color: var(--bodyColor);
         -webkit-font-smoothing: antialiased;
     }
 
@@ -119,13 +130,13 @@
     }
     .tip:first-child {
         font-size: 14px;
-        color: #888;
+        color: var(--tipColor);
         padding: 0 10px 10px;
     }
 
     .tip:last-child {
         font-size: 14px;
-        color: #888;
+        color: var(--tipColor);
         padding: 10px 10px 0;
     }
 
@@ -134,6 +145,6 @@
     }
 
     .tip > a {
-        color: #FF5E38;
+        color: var(--linkColor);
     }
 </style>

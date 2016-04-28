@@ -50,7 +50,7 @@
         border-radius: 40px;
         position: fixed;
         z-index: 3;
-        background-color: #2C2E32;
+        background-color: var(--mainColor);
         line-height: 80px;
         text-align: center;
         color: #fff;

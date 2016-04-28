@@ -47,7 +47,7 @@
         width: 12px;
         height: 12px;
         margin: 0 3px;
-        background-color: #ccc;
+        background-color: var(--borderColor);
         border-radius: 100%;
         animation: bounce 1.6s infinite ease-in-out;
         animation-fill-mode: both;
