@@ -88,10 +88,6 @@
     import utils from '../tools/utils'
 
     export default{
-        vuex: {
-            getters: {},
-            actions: {}
-        },
         data () {
             return {
                 cityJson,
@@ -110,7 +106,6 @@
         components: {
             ele
         },
-        computed: {},
         methods: {
             setCity1 (city1) {
                 if (city1 != this.city1) {
@@ -179,11 +174,6 @@
                     this.roads = json.result
                 })
             }
-        },
-        route: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

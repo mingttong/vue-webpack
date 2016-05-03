@@ -16,22 +16,8 @@
         props: [
             'show'
         ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
-        computed: {},
-        components: {},
         methods: {
             touchmove () {}
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

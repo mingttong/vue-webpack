@@ -12,22 +12,7 @@
         props: [
             'single',
             'fixed'
-        ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
-        computed: {},
-        components: {},
-        methods: {},
-        events: {},
-        created () {
-        },
-        attached () {
-        }
+        ]
     }
 </script>
 

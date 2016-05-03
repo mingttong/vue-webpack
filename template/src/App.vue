@@ -18,19 +18,12 @@
         vuex: {
             getters: {
                 loading: state => state.loading
-            },
-            actions: {}
-        },
-        data () {
-            return {}
+            }
         },
         components: {
             popup,
             loading
-        },
-        methods: {},
-        events: {},
-        created () {}
+        }
     }
 </script>
 

@@ -14,14 +14,6 @@
             'link',
             'hide'
         ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
-        computed: {},
         methods: {
             clear (e) {
                 e.target.previousElementSibling.value = ""
@@ -31,11 +23,6 @@
                     this.link
                 )
             }
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

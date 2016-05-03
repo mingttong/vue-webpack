@@ -13,18 +13,12 @@
             'text',
             'link'
         ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
         data () {
             return {
                 currentX: window.innerWidth - 90 + 'px',
                 currentY: window.innerHeight - 90 + 'px'
             }
         },
-        computed: {},
-        components: {},
         methods: {
             touchmove (e) {
                 if (e.touches[0].clientX > 40 && e.touches[0].clientX < window.innerWidth - 40) {
@@ -34,11 +28,6 @@
                     this.currentY = e.touches[0].clientY - 40 + 'px'
                 }
             }
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>
