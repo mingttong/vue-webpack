@@ -18,7 +18,6 @@
     } from '../store/actions'
 
     export default{
-        props: [],
         vuex: {
             getters: {
                 popupShow: state => state.popupShow,
@@ -28,9 +27,6 @@
             actions: {
                 hidePopup
             }
-        },
-        data () {
-            return {}
         },
         computed: {
             title () {
@@ -53,11 +49,6 @@
                     this.hidePopup()
                 }
             }
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

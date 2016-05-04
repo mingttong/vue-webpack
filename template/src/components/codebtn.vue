@@ -17,17 +17,12 @@
             'required',
             'fn'
         ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
         data () {
             return {
                 text: '获取验证码',
                 allow: true
             }
         },
-        computed: {},
         components: {
             btn
         },
@@ -60,11 +55,6 @@
                     }
                 }, 1000)
             }
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

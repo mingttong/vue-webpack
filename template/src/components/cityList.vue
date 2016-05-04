@@ -2,7 +2,7 @@
     <div>
         <ele>
             <div class="city-list">
-                <div class="title">首字母</div>
+                <div class="title">请选择首字母</div>
                 <div class="city1-list">
                     <div v-for="(key, val) in cityJson.list"
                          track-by="$index"
@@ -10,7 +10,7 @@
                          @click="setCity1(key)"
                          :class="{'selected': key == city1}">
                         <div>
-                            \{{key}}
+                            {{key}}
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
         </ele>
         <ele>
             <div class="city-list">
-                <div class="title">省份</div>
+                <div class="title">请选择省份</div>
                 <div class="city2-list">
                     <div v-for="(key, citys) in cityJson.list"
                          track-by="$index"
@@ -27,7 +27,7 @@
                         <div v-for="city in citys"
                              track-by="$index"
                              @click="setCity2(city[1][0], city[0])"
-                             :class="{'selected': city[1][0] == city2}">\{{city[1][0]}}
+                             :class="{'selected': city[1][0] == city2}">{{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -35,15 +35,15 @@
         </ele>
         <ele>
             <div class="city-list">
-                <div class="title">城市</div>
+                <div class="title">请选择城市</div>
                 <div class="city2-list">
                     <div class="city2-ele">
                         <div v-for="city in cityJson.detail"
                              track-by="$index"
                              v-if="city[2] == code1"
-                             :class="{'selected': city[1][0] == city3}"
+                             :class="{'selected': city[0] == code2}"
                              @click="setCity3(city[1][0], city[0])">
-                            \{{city[1][0]}}
+                            {{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
         </ele>
         <ele>
             <div class="city-list">
-                <div class="title">区县</div>
+                <div class="title">请选择区县</div>
                 <div class="city2-list">
                     <div class="city2-ele">
                         <div v-for="city in cityJson.detail"
@@ -59,7 +59,7 @@
                              v-if="city[2] == code2"
                              :class="{'selected': city[1][0] == city4}"
                              @click="setCity4(city[1][0], city[0])">
-                            \{{city[1][0]}}
+                            {{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -67,14 +67,14 @@
         </ele>
         <ele>
             <div class="city-list">
-                <div class="title">街道</div>
+                <div class="title">请选择街道</div>
                 <div class="roads">
                     <div v-for="road in roads"
                          track-by="$index"
                          class="road"
                          :class="{'selected': road[0] == code4}"
                          @click="setRoad(road[1], road[0])">
-                        \{{road[1]}}
+                        {{road[1]}}
                     </div>
                 </div>
             </div>
@@ -88,10 +88,6 @@
     import utils from '../tools/utils'
 
     export default{
-        vuex: {
-            getters: {},
-            actions: {}
-        },
         data () {
             return {
                 cityJson,
@@ -110,7 +106,6 @@
         components: {
             ele
         },
-        computed: {},
         methods: {
             setCity1 (city1) {
                 if (city1 != this.city1) {
@@ -137,10 +132,16 @@
                     this.road = ''
                     this.roads = []
                     this.code4 = ''
+                    if (code1 == '110000' ||
+                        code1 == '500000' ||
+                        code1 == '310000' ||
+                        code1 == '120000') {
+                        this.setCity3('', (parseInt(code1) + 100))
+                    }
                 }
             },
             setCity3 (city3, code2) {
-                if (city3 != this.city3) {
+                if (city3 != this.city3 || !city3) {
                     this.city3 = city3
                     this.code2 = code2
                     this.city4 = ''
@@ -179,11 +180,6 @@
                     this.roads = json.result
                 })
             }
-        },
-        route: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>
@@ -227,7 +223,7 @@
     }
 
     .selected {
-        background-color: var(--bodyColor);
+        background-color: #efefef;
     }
 
     .title {

@@ -30,14 +30,9 @@
             'btnList'
         ],
         vuex: {
-            getters: {}
-            ,
             actions: {
                 hidePopup
             }
-        },
-        data() {
-            return {}
         },
         computed: {
             alertBtnList () {
@@ -58,12 +53,6 @@
                 }
                 return alertVal
             }
-        },
-        methods: {},
-        events: {},
-        created() {
-        },
-        attached() {
         }
     }
 </script>

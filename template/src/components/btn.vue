@@ -32,13 +32,6 @@
                 }
             }
         },
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
         computed: {
             btnWidth () {
                 if (!this.cut) {
@@ -53,11 +46,6 @@
                     this.btnFn()
                 }
             }
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

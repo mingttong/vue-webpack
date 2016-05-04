@@ -16,22 +16,8 @@
             'link',
             'hide'
         ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
-        computed: {},
         components: {
             row
-        },
-        methods: {},
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

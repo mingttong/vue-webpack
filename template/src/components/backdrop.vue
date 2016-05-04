@@ -10,21 +10,8 @@
         props: [
             'backdropShow'
         ],
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
-        computed: {},
         methods: {
             touchmove () {}
-        },
-        events: {},
-        created () {
-        },
-        attached () {
         }
     }
 </script>

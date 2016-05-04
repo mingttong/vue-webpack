@@ -7,23 +7,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-    export default{
-        vuex: {
-            getters: {},
-            actions: {}
-        },
-        data () {
-            return {}
-        },
-        components: {},
-        computed: {},
-        methods: {},
-        route: {},
-        created () {
-        },
-        attached () {
-        }
-    }
+    export default {}
 </script>
 
 <style scoped>
