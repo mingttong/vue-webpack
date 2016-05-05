@@ -33,7 +33,7 @@
                 </div>
             </div>
         </ele>
-        <ele>
+        <ele :hide="!city2 || hideCity">
             <div class="city-list">
                 <div class="title">请选择城市</div>
                 <div class="city2-list">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </ele>
-        <ele>
+        <ele :hide="!code2 || hideQx">
             <div class="city-list">
                 <div class="title">请选择区县</div>
                 <div class="city2-list">
@@ -58,14 +58,15 @@
                              track-by="$index"
                              v-if="city[2] == code2"
                              :class="{'selected': city[1][0] == city4}"
-                             @click="setCity4(city[1][0], city[0])">
+                             @click="setCity4(city[1][0], city[0])"
+                             class="qx">
                             {{city[1][0]}}
                         </div>
                     </div>
                 </div>
             </div>
         </ele>
-        <ele>
+        <ele :hide="!roads.length">
             <div class="city-list">
                 <div class="title">请选择街道</div>
                 <div class="roads">
@@ -91,7 +92,7 @@
         data () {
             return {
                 cityJson,
-                city1: '',
+                city1: 'A-G',
                 city2: '',
                 city3: '',
                 city4: '',
@@ -100,7 +101,9 @@
                 code3: '',
                 roads: [],
                 road: '',
-                code4: ''
+                code4: '',
+                hideCity: false,
+                hideQx: false
             }
         },
         components: {
@@ -136,7 +139,10 @@
                         code1 == '500000' ||
                         code1 == '310000' ||
                         code1 == '120000') {
+                        this.hideCity = true
                         this.setCity3('', (parseInt(code1) + 100))
+                    } else {
+                        this.hideCity = false
                     }
                 }
             },
@@ -149,6 +155,15 @@
                     this.road = ''
                     this.roads = []
                     this.code4 = ''
+                    this.$nextTick(() => {
+                        const qxNum = document.getElementsByClassName('qx').length
+                        if (qxNum == 0) {
+                            this.hideQx = true
+                            this.getAddress()
+                        } else {
+                            this.hideQx = false
+                        }
+                    })
                 }
             },
             setCity4 (city4, code3) {
@@ -231,13 +246,14 @@
     }
 
     .roads {
-        display: flex;
-        flex-wrap: wrap;
+        /*display: flex;*/
+        /*flex-wrap: wrap;*/
     }
 
     .road {
         padding: 10px;
         min-width: 33.33%;
         transition: .2s;
+        float: left;
     }
 </style>
