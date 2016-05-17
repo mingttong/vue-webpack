@@ -1,97 +1,88 @@
 <template>
     <div>
-        <ele>
-            <div class="city-list">
-                <div class="title">请选择首字母</div>
-                <div class="city1-list">
-                    <div v-for="(key, val) in cityJson.list"
-                         track-by="$index"
-                         class="city1-ele"
-                         @click="setCity1(key)"
-                         :class="{'selected': key == city1}">
-                        <div>
-                            {{key}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </ele>
-        <ele>
-            <div class="city-list">
-                <div class="title">请选择省份</div>
-                <div class="city2-list">
-                    <div v-for="(key, citys) in cityJson.list"
-                         track-by="$index"
-                         class="city2-ele"
-                         v-if="key == city1">
-                        <div v-for="city in citys"
+        <group :fixed="true">
+            <btn :cut="1"
+                 :next="true"
+                 :text="'选好了'"
+                 :btn-fn="ok"></btn>
+        </group>
+        <group>
+            <ele>
+                <div class="city-list">
+                    <div class="title">请选择省份（按首字母检索）</div>
+                    <div class="city1-list">
+                        <div v-for="(key, val) in cityList"
                              track-by="$index"
-                             @click="setCity2(city[1][0], city[0])"
-                             :class="{'selected': city[1][0] == city2}">{{city[1][0]}}
+                             class="city1-ele"
+                             @click="setCity1(key)"
+                             :class="{'selected': key == city1}">
+                            <div>
+                                {{key}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </ele>
-        <ele :hide="!city2 || hideCity">
-            <div class="city-list">
-                <div class="title">请选择城市</div>
-                <div class="city2-list">
-                    <div class="city2-ele">
-                        <div v-for="city in cityJson.detail"
+            </ele>
+            <ele>
+                <div class="city-list">
+                    <div class="city2-list">
+                        <div v-for="(key, citys) in cityList"
                              track-by="$index"
-                             v-if="city[2] == code1"
-                             :class="{'selected': city[0] == code2}"
-                             @click="setCity3(city[1][0], city[0])">
-                            {{city[1][0]}}
+                             class="city2-ele"
+                             v-if="key == city1">
+                            <div v-for="city in citys"
+                                 track-by="$index"
+                                 @click="setCity2(city[1][0], city[0])"
+                                 :class="{'selected': city[1][0] == city2}">{{city[1][0]}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </ele>
-        <ele :hide="!code2 || hideQx">
-            <div class="city-list">
-                <div class="title">请选择区县</div>
-                <div class="city2-list">
-                    <div class="city2-ele">
-                        <div v-for="city in cityJson.detail"
+            </ele>
+            <city-list-ele :hide="!city2 || hideCity"
+                           :last-code="code1"
+                           :this-code="code2"
+                           :is-qx="false"
+                           :text="'请选择城市'"
+                           :fn="setCity3"
+                           keep-alive></city-list-ele>
+            <city-list-ele :hide="!code2 || hideQx"
+                           :last-code="code2"
+                           :this-code="code3"
+                           :is-qx="true"
+                           :text="'请选择区县'"
+                           :fn="setCity4"
+                           keep-alive></city-list-ele>
+            <ele :hide="!roads.length">
+                <div class="city-list">
+                    <div class="title">请选择街道</div>
+                    <div class="roads">
+                        <div v-for="road in roads"
                              track-by="$index"
-                             v-if="city[2] == code2"
-                             :class="{'selected': city[1][0] == city4}"
-                             @click="setCity4(city[1][0], city[0])"
-                             class="qx">
-                            {{city[1][0]}}
+                             class="road"
+                             :class="{'selected': road[0] == code4}"
+                             @click="setRoad(road[1], road[0])">
+                            {{road[1]}}
                         </div>
                     </div>
                 </div>
-            </div>
-        </ele>
-        <ele :hide="!roads.length">
-            <div class="city-list">
-                <div class="title">请选择街道</div>
-                <div class="roads">
-                    <div v-for="road in roads"
-                         track-by="$index"
-                         class="road"
-                         :class="{'selected': road[0] == code4}"
-                         @click="setRoad(road[1], road[0])">
-                        {{road[1]}}
-                    </div>
-                </div>
-            </div>
-        </ele>
+            </ele>
+        </group>
     </div>
 </template>
 
 <script type="text/ecmascript-6">
     import ele from '../components/ele'
-    import cityJson from '../tools/cityJson'
+    import group from '../components/group'
+    import btn from '../components/btn'
+    import cityListEle from '../components/cityListEle'
+    import cityList from '../tools/cityList'
     import utils from '../tools/utils'
 
     export default{
         data () {
             return {
-                cityJson,
+                cityList,
                 city1: 'A-G',
                 city2: '',
                 city3: '',
@@ -107,7 +98,10 @@
             }
         },
         components: {
-            ele
+            ele,
+            group,
+            btn,
+            cityListEle
         },
         methods: {
             setCity1 (city1) {
@@ -179,8 +173,6 @@
             setRoad (road, code4) {
                 this.road = road
                 this.code4 = code4
-                const address = this.city2 + this.city3 + this.city4 + this.road
-                this.$dispatch('set-address', address)
             },
             getAddress () {
                 const param = {}
@@ -194,6 +186,10 @@
                 ).then((json) => {
                     this.roads = json.result
                 })
+            },
+            ok () {
+                const address = this.city2 + this.city3 + this.city4 + this.road
+                this.$dispatch('set-address', address)
             }
         }
     }
