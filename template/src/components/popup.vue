@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @touchmove.stop.prevent="touchmove()">
         <backdrop :backdrop-show="popupShow"></backdrop>
         <alert @click="ifHidePopup"
                :alert-show="popupShow"
@@ -48,7 +48,8 @@
                 if (!this.popupHideBan) {
                     this.hidePopup()
                 }
-            }
+            },
+            touchmove () {}
         }
     }
 </script>
