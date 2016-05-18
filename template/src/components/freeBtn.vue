@@ -44,7 +44,7 @@
         background-color: $MAIN_COLOR;
         line-height: 80px;
         text-align: center;
-        color: #fff;
+        color: white;
         transition: .1s;
         box-shadow: 0 0 6px 4px $ACTIVE_DROP_COLOR;
     }

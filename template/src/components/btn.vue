@@ -64,7 +64,7 @@
     .disabled {
         &, &:active {
             background-color: #AAAAAA !important;
-            color: #fff !important;
+            color: white !important;
             pointer-events: none;
             cursor: not-allowed;
         }
@@ -75,7 +75,7 @@
     }
 
     .warning {
-        background-color: #fff;
+        background-color: white;
         color: $MINOR_COLOR;
         &::before {
             @include btn-border;
@@ -85,14 +85,14 @@
 
     .alert {
         background-color: $MINOR_COLOR;
-        color: #fff;
+        color: white;
         &::before {
             display: none !important;
         }
     }
 
     .next {
-        color: #fff;
+        color: white;
         background-color: $MAIN_COLOR;
         &::before {
             display: none;
