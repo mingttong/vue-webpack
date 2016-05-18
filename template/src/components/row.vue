@@ -43,7 +43,9 @@
     }
 </style>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     .row {
         width: 100%;
         padding: 10px;
@@ -57,7 +59,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-bottom: 1px solid var(--borderColor);
+        border-bottom: 1px solid $borderColor;
         position: absolute;
         bottom: -1px;
         left: 0;

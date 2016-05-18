@@ -10,7 +10,9 @@
     export default {}
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     @keyframes bounce {
         0%, 80%, to {
             transform: scale(0)
@@ -31,7 +33,7 @@
         width: 12px;
         height: 12px;
         margin: 0 3px;
-        background-color: var(--borderColor);
+        background-color: $borderColor;
         border-radius: 100%;
         animation: bounce 1.6s infinite ease-in-out;
         animation-fill-mode: both;

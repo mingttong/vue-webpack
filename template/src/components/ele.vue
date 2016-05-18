@@ -32,7 +32,7 @@
     .box {
         display: flex;
         justify-content: space-between;
-        background-color: #fff;
+        background-color: white;
         align-items: center;
     }
 </style>

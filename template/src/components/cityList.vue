@@ -195,7 +195,9 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     .city-list {
         width: 100%;
     }
@@ -234,16 +236,11 @@
     }
 
     .selected {
-        background-color: #efefef;
+        background-color: $bodyColor;
     }
 
     .title {
         padding: 5px 0;
-    }
-
-    .roads {
-        /*display: flex;*/
-        /*flex-wrap: wrap;*/
     }
 
     .road {

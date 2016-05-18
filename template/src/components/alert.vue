@@ -57,7 +57,9 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     .box {
         display: flex;
         flex-direction: column;
@@ -73,7 +75,7 @@
 
     .popup {
         width: 100%;
-        background-color: #fff;
+        background-color: white;
         border-radius: 3px;
     }
 
@@ -140,7 +142,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-top: 1px solid var(--borderColor);
+        border-top: 1px solid $borderColor;
         transform: scaleY(.5);
         transform-origin: 0 0;
         position: absolute;

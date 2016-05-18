@@ -50,9 +50,11 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     button {
-        color: var(--mainTextColor);
+        color: $mainTextColor;
     }
 
     button::before {
@@ -63,7 +65,7 @@
         left: -50%;
         top: -50%;
         transform: scale(.5);
-        border: 2px solid var(--mainTextColor);
+        border: 2px solid $mainTextColor;
     }
 
     .disabled,
@@ -82,7 +84,7 @@
 
     .warning {
         background-color: #fff;
-        color: var(--minorColor);
+        color: $minorColor;
     }
 
     .warning::before {
@@ -93,17 +95,17 @@
         left: -50%;
         top: -50%;
         transform: scale(.5);
-        border: 2px solid var(--minorColor);
+        border: 2px solid $minorColor;
     }
 
     .alert {
-        background-color: var(--minorColor);
+        background-color: $minorColor;
         color: #fff;
     }
 
     .next {
         color: #fff;
-        background-color: var(--mainColor);
+        background-color: $mainColor;
     }
 
     .next::before {
@@ -117,6 +119,6 @@
         position: absolute;
         left: 0;
         top: 0;
-        background-color: rgba(0, 0, 0, .1);
+        background-color: $activeDropColor;
     }
 </style>
