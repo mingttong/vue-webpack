@@ -92,7 +92,7 @@
     }
 
     .selected {
-        background-color: $bodyColor;
+        background-color: $BODY-COLOR;
     }
 
     .title {

@@ -33,7 +33,7 @@
         width: 12px;
         height: 12px;
         margin: 0 3px;
-        background-color: $borderColor;
+        background-color: $BORDER-COLOR;
         border-radius: 100%;
         animation: bounce 1.6s infinite ease-in-out;
         animation-fill-mode: both;

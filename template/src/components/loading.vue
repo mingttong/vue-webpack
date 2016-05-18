@@ -34,7 +34,7 @@
     }
 
     #loading > div {
-        background: linear-gradient(to right, $minorColor 35%, $linkColor 50%, $minorColor 65%);
+        background: linear-gradient(to right, $MINOR-COLOR 35%, $LINK-COLOR 50%, $MINOR-COLOR 65%);
         width: 200%;
         height: 3px;
         animation-name: loading;

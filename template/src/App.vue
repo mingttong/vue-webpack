@@ -54,9 +54,9 @@
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         margin: 0;
         padding: 0;
-        color: $strongTextColor;
+        color: $STRONG-TEXT-COLOR;
         -webkit-user-select: none;
-        background-color: $bodyColor;
+        background-color: $BODY-COLOR;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -129,13 +129,13 @@
     }
     .tip:first-child {
         font-size: 14px;
-        color: $tipColor;
+        color: $TIP-COLOR;
         padding: 0 10px 10px;
     }
 
     .tip:last-child {
         font-size: 14px;
-        color: $tipColor;
+        color: $TIP-COLOR;
         padding: 10px 10px 0;
     }
 
@@ -144,6 +144,6 @@
     }
 
     .tip > a {
-        color: $linkColor;
+        color: $LINK-COLOR;
     }
 </style>
