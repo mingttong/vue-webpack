@@ -23,7 +23,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+    @import '../scss/fragment';
 
     #loading {
         width: 100%;
@@ -31,16 +31,15 @@
         top: 0;
         left: 0;
         z-index: 4;
-    }
-
-    #loading > div {
-        background: linear-gradient(to right, $MINOR_COLOR 35%, $LINK_COLOR 50%, $MINOR_COLOR 65%);
-        width: 200%;
-        height: 3px;
-        animation-name: loading;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        transform: translateX(-100%);
+        > div {
+            background: linear-gradient(to right, $MINOR_COLOR 35%, $LINK_COLOR 50%, $MINOR_COLOR 65%);
+            width: 200%;
+            height: 3px;
+            animation-name: loading;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transform: translateX(-100%);
+        }
     }
 
     @keyframes loading {
@@ -52,22 +51,20 @@
         }
     }
 
-    .slide-transition {
-        transition: all .3s;
-    }
-
-    .slide-enter, .slide-leave {
-        opacity: 0;
-        transform: translateY(-100%);
+    .slide {
+        &-transition {
+            transition: all .3s;
+        }
+        &-enter,
+        &-leave {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
     }
 
     #loading-drop {
+        @include full-screen;
         background: transparent;
         z-index: 3;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
     }
 </style>

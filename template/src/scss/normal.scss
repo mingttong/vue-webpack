@@ -1,0 +1,64 @@
+@import '../scss/colorList';
+
+html, body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: $STRONG_TEXT_COLOR;
+    -webkit-user-select: none;
+    background-color: $BODY_COLOR;
+    -webkit-font-smoothing: antialiased;
+}
+
+*, *:hover, *:active, ::before, ::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+}
+
+button {
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    font-size: 14px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+input {
+    margin-bottom: 2px !important;
+}
+
+input:focus, input, textarea, textarea:focus, select {
+    box-shadow: none;
+    border: 0;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    outline: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+input, select {
+    text-align: right;
+    -webkit-appearance: none;
+}
+
+select {
+    direction: rtl;
+}
+
+select:first-child {
+    direction: ltr;
+}

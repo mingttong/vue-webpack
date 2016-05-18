@@ -39,11 +39,12 @@
         animation-fill-mode: both;
     }
 
-    .dot-1 {
-        animation-delay: -.32s
-    }
-
-    .dot-2 {
-        animation-delay: -.16s
+    .dot {
+        &-1 {
+            animation-delay: -.32s
+        }
+        &-2 {
+            animation-delay: -.16s
+        }
     }
 </style>

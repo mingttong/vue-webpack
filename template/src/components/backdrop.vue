@@ -17,21 +17,20 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+    @import '../scss/fragment';
 
     #backdrop {
+        @include full-screen;
         background: $BACKDROP_COLOR;
         z-index: 3;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
     }
-    .fade-transition {
-        transition: .3s ease-out;
-    }
-    .fade-enter, .fade-leave {
-        opacity: 0;
+    .fade {
+        &-transition {
+            transition: .3s ease-out;
+        }
+        &-enter,
+        &-leave {
+            opacity: 0;
+        }
     }
 </style>

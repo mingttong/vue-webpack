@@ -2,7 +2,7 @@
     <div>
         <ele :hide="hide">
             <div class="city-list">
-                <div class="title">\{{text}}</div>
+                <div class="title">/{{text}}</div>
                 <div class="city2-list">
                     <div class="city2-ele">
                         <div v-for="city in detailFilter"
@@ -10,7 +10,7 @@
                              v-if="city[2] == lastCode"
                              :class="{'selected': city[0] == thisCode, 'qx': isQx}"
                              @click="fn(city[1][0], city[0])">
-                            \{{city[1][0]}}
+                            /{{city[1][0]}}
                         </div>
                     </div>
                 </div>
@@ -72,23 +72,20 @@
         flex: 0 1 25%;
         display: flex;
         flex-wrap: wrap;
+        > div {
+            width: 100%;
+            text-align: center;
+            padding: 10px 5px;
+            transition: .2s;
+        }
     }
 
     .city2-ele {
         flex: 0 1 100%;
-    }
-
-    .city1-ele > div,
-    .city2-ele > div {
-        width: 100%;
-        text-align: center;
-        padding: 10px 5px;
-        transition: .2s;
-    }
-
-    .city2-ele > div {
-        flex-basis: 25%;
-        width: auto;
+        > div {
+            flex-basis: 25%;
+            width: auto;
+        }
     }
 
     .selected {

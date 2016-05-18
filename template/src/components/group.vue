@@ -16,25 +16,28 @@
     }
 </script>
 
-<style>
-    .single .tip:first-child {
-        padding: 0 0 10px;
-    }
-
-    .single .tip:last-child {
-        padding: 10px 0 0;
+<style rel="stylesheet/scss"
+       lang="scss">
+    .single .tip {
+        &:first-child {
+            padding: 0 0 10px;
+        }
+        &:last-child {
+            padding: 10px 0 0;
+        }
     }
 </style>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+<style rel="stylesheet/scss"
+       lang="scss"
+       scoped>
+    @import '../scss/fragment';
 
     .group {
         margin-top: 10px;
-    }
-
-    .group:last-child {
-        margin-bottom: 80px;
+        &:last-child {
+            margin-bottom: 80px;
+        }
     }
 
     .single {
@@ -51,17 +54,9 @@
         margin-top: 0;
         margin-bottom: 0 !important;
         background-color: white;
-    }
-
-    .fixed::before {
-        content: "";
-        width: 100%;
-        height: 1px;
-        border-top: 1px solid $BORDER_COLOR;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: scaleY(.5);
-        transform-origin: 0 0;
+        &::before {
+            @include row-border;
+            top: 0;
+        }
     }
 </style>
