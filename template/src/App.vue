@@ -12,6 +12,7 @@
     // 只需要在根组件绑定一次, 子组件全部可以通过 this.$store 访问
     import loading from './components/loading'
     import popup from './components/popup'
+    import utils from './tools/utils'
 
     export default {
         store,
@@ -23,6 +24,24 @@
         components: {
             popup,
             loading
+        },
+        methods: {
+            setBrowserClass () {
+                const browser = utils.browser()
+                if (browser.android) {
+                    this.browserClass = {
+                        'android': true
+                    }
+                }
+                if (browser.ios) {
+                    this.browserClass = {
+                        'ios': true
+                    }
+                }
+            }
+        },
+        created () {
+            this.setBrowserClass()
         }
     }
 </script>
