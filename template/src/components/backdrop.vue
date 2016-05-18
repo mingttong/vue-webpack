@@ -20,7 +20,7 @@
     @import '../scss/colorList';
 
     #backdrop {
-        background: $BACKDROP-COLOR;
+        background: $BACKDROP_COLOR;
         z-index: 3;
         position: fixed;
         top: 0;

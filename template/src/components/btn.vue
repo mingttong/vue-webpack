@@ -54,7 +54,7 @@
     @import '../scss/colorList';
 
     button {
-        color: $MAIN-TEXT-COLOR;
+        color: $MAIN_TEXT_COLOR;
     }
 
     button::before {
@@ -65,7 +65,7 @@
         left: -50%;
         top: -50%;
         transform: scale(.5);
-        border: 2px solid $MAIN-TEXT-COLOR;
+        border: 2px solid $MAIN_TEXT_COLOR;
     }
 
     .disabled,
@@ -84,7 +84,7 @@
 
     .warning {
         background-color: #fff;
-        color: $MINOR-COLOR;
+        color: $MINOR_COLOR;
     }
 
     .warning::before {
@@ -95,17 +95,17 @@
         left: -50%;
         top: -50%;
         transform: scale(.5);
-        border: 2px solid $MINOR-COLOR;
+        border: 2px solid $MINOR_COLOR;
     }
 
     .alert {
-        background-color: $MINOR-COLOR;
+        background-color: $MINOR_COLOR;
         color: #fff;
     }
 
     .next {
         color: #fff;
-        background-color: $MAIN-COLOR;
+        background-color: $MAIN_COLOR;
     }
 
     .next::before {
@@ -119,6 +119,6 @@
         position: absolute;
         left: 0;
         top: 0;
-        background-color: $ACTIVE-DROP-COLOR;
+        background-color: $ACTIVE_DROP_COLOR;
     }
 </style>

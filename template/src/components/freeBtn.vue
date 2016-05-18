@@ -41,11 +41,11 @@
         border-radius: 40px;
         position: fixed;
         z-index: 3;
-        background-color: $MAIN-COLOR;
+        background-color: $MAIN_COLOR;
         line-height: 80px;
         text-align: center;
         color: #fff;
         transition: .1s;
-        box-shadow: 0 0 6px 4px $ACTIVE-DROP-COLOR;
+        box-shadow: 0 0 6px 4px $ACTIVE_DROP_COLOR;
     }
 </style>

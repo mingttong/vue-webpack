@@ -57,7 +57,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-top: 1px solid $BORDER-COLOR;
+        border-top: 1px solid $BORDER_COLOR;
         position: absolute;
         top: 0;
         left: 0;

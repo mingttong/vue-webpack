@@ -142,7 +142,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-top: 1px solid $BORDER-COLOR;
+        border-top: 1px solid $BORDER_COLOR;
         transform: scaleY(.5);
         transform-origin: 0 0;
         position: absolute;

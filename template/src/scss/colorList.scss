@@ -1,10 +1,12 @@
-$MAIN-COLOR: #75D3BB; /* 主色 */
-$MINOR-COLOR: #FFC100; /* 副色 */
-$BODY-COLOR: #efefef; /* body 背景色 */
-$BORDER-COLOR: #d5d5d6; /* 线条颜色 */
-$MAIN-TEXT-COLOR: #666; /* 基本文字颜色 */
-$STRONG-TEXT-COLOR: #333; /* 强调文字颜色 */
-$TIP-COLOR: #888; /* 提示文字颜色 */
-$LINK-COLOR: #FF5E38; /* 链接文字颜色 */
-$BACKDROP-COLOR: rgba(0, 0, 0, .6); /* 背景遮罩层背景色 */
-$ACTIVE-DROP-COLOR: rgba(0, 0, 0, .1); /* 激活遮罩层背景色, 或阴影颜色 */
+// 常量全部大写
+
+$MAIN_COLOR: #75D3BB; /* 主色 */
+$MINOR_COLOR: #FFC100; /* 副色 */
+$BODY_COLOR: #efefef; /* body 背景色 */
+$BORDER_COLOR: #d5d5d6; /* 线条颜色 */
+$MAIN_TEXT_COLOR: #666; /* 基本文字颜色 */
+$STRONG_TEXT_COLOR: #333; /* 强调文字颜色 */
+$TIP_COLOR: #888; /* 提示文字颜色 */
+$LINK_COLOR: #FF5E38; /* 链接文字颜色 */
+$BACKDROP_COLOR: rgba(0, 0, 0, .6); /* 背景遮罩层背景色 */
+$ACTIVE_DROP_COLOR: rgba(0, 0, 0, .1); /* 激活遮罩层背景色, 或阴影颜色 */

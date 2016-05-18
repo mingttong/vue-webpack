@@ -65,7 +65,7 @@
         content: "";
         width: 100%;
         height: 1px;
-        border-bottom: 1px solid $BORDER-COLOR;
+        border-bottom: 1px solid $BORDER_COLOR;
         position: absolute;
         bottom: -1px;
         left: 0;
