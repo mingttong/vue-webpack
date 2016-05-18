@@ -3,7 +3,7 @@
          :style="{transform:'translate(' + currentX + ',' + currentY + ')'}"
          class="free-btn"
          v-link="link">
-        /{{text}}
+        \{{text}}
     </div>
 </template>
 

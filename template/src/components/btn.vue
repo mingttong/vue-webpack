@@ -1,7 +1,7 @@
 <template>
     <button :style="{width:btnWidth}"
             :class="{alert:alert,disabled:!allow,warning:warning,next:next}"
-            @click.stop.prevent="btnFunc()">/{{text}}
+            @click.stop.prevent="btnFunc()">\{{text}}
     </button>
 </template>
 
