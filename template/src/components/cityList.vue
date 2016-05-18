@@ -213,7 +213,7 @@
 
     .city1-ele,
     .city2-ele {
-        lex: 0 1 25%;
+        flex: 0 1 25%;
         display: flex;
         flex-wrap: wrap;
         > div {
