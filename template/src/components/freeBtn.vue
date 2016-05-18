@@ -3,7 +3,7 @@
          :style="{transform:'translate(' + currentX + ',' + currentY + ')'}"
          class="free-btn"
          v-link="link">
-        \{{text}}
+        /{{text}}
     </div>
 </template>
 
@@ -41,11 +41,11 @@
         border-radius: 40px;
         position: fixed;
         z-index: 3;
-        background-color: $mainColor;
+        background-color: $MAIN_COLOR;
         line-height: 80px;
         text-align: center;
-        color: #fff;
+        color: white;
         transition: .1s;
-        box-shadow: 0 0 6px 4px $activeDropColor;
+        box-shadow: 0 0 6px 4px $ACTIVE_DROP_COLOR;
     }
 </style>

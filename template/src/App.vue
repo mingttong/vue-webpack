@@ -48,70 +48,7 @@
 
 <style rel="stylesheet/scss" lang="scss">
     /* 这里写全局样式 */
-    @import './scss/colorList';
-
-    html, body {
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: $strongTextColor;
-        -webkit-user-select: none;
-        background-color: $bodyColor;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    *, *:hover, *:active, ::before, ::after {
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-
-    a:link, a:visited, a:hover, a:active {
-        text-decoration: none;
-        color: inherit;
-        outline: 0;
-    }
-
-    button {
-        height: 48px;
-        line-height: 48px;
-        border: none;
-        font-size: 14px;
-        position: relative;
-        padding: 0;
-        margin: 0;
-        background-color: transparent;
-    }
-
-    input {
-        margin-bottom: 2px !important;
-    }
-
-    input:focus, input, textarea, textarea:focus, select {
-        box-shadow: none;
-        border: 0;
-        background-color: #fff;
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-        outline: 0;
-    }
-
-    button:focus {
-        outline: 0;
-    }
-
-    input, select {
-        text-align: right;
-        -webkit-appearance: none;
-    }
-
-    select {
-        direction: rtl;
-    }
-
-    select:first-child {
-        direction: ltr;
-    }
+    @import './scss/normal';
 
     .fade-transition {
         transition: .2s;
@@ -129,13 +66,13 @@
     }
     .tip:first-child {
         font-size: 14px;
-        color: $tipColor;
+        color: $TIP_COLOR;
         padding: 0 10px 10px;
     }
 
     .tip:last-child {
         font-size: 14px;
-        color: $tipColor;
+        color: $TIP_COLOR;
         padding: 10px 10px 0;
     }
 
@@ -144,6 +81,6 @@
     }
 
     .tip > a {
-        color: $linkColor;
+        color: $LINK_COLOR;
     }
 </style>

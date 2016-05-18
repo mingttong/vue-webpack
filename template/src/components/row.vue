@@ -34,14 +34,8 @@
         flex: 1;
     }
 
-    .android .row > input:focus {
-        margin-right: 25px;
-    }
-
-    .android .row > input:focus + .clear,
-    .ios .row > input:first-child:focus + .clear{
-        opacity: 1;
-        z-index: 1;
+    .row > input:first-child + .clear {
+        display: block;
     }
 
     .row > :first-child + input {
@@ -49,8 +43,10 @@
     }
 </style>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+<style rel="stylesheet/scss"
+       lang="scss"
+       scoped>
+    @import '../scss/fragment';
 
     .row {
         width: 100%;
@@ -59,34 +55,29 @@
         min-height: 50px;
     }
 
-    .row:first-child::before,
-    .tip + .row::before,
-    .row::after {
-        content: "";
-        width: 100%;
-        height: 1px;
-        border-bottom: 1px solid $borderColor;
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        transform: scaleY(.5);
-        transform-origin: 0 0;
-        z-index: 1;
+    .row:first-child,
+    .tip + .row {
+        &::before {
+            @include row-border
+        }
     }
 
-    .row::before {
-        top: 0;
-    }
-
-    .tip .row {
-        padding: 0;
-        background-color: transparent;
-        min-height: inherit;
-    }
-
-    .tip .row::before,
-    .tip .row::after {
-        content: none;
+    .row {
+        &::before {
+            top: 0;
+        }
+        &::after {
+            @include row-border
+        }
+        .tip & {
+            padding: 0;
+            background-color: transparent;
+            min-height: inherit;
+            &::before,
+            &::after {
+                content: none;
+            }
+        }
     }
 
     .clear {
@@ -97,8 +88,6 @@
         top: 0;
         background: url("../assets/clear.svg") no-repeat center;
         background-size: 20px;
-        opacity: 0;
-        z-index: -1;
-        transition: .1s;
+        display: none;
     }
 </style>

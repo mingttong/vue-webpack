@@ -33,17 +33,18 @@
         width: 12px;
         height: 12px;
         margin: 0 3px;
-        background-color: $borderColor;
+        background-color: $BORDER_COLOR;
         border-radius: 100%;
         animation: bounce 1.6s infinite ease-in-out;
         animation-fill-mode: both;
     }
 
-    .dot-1 {
-        animation-delay: -.32s
-    }
-
-    .dot-2 {
-        animation-delay: -.16s
+    .dot {
+        &-1 {
+            animation-delay: -.32s
+        }
+        &-2 {
+            animation-delay: -.16s
+        }
     }
 </style>

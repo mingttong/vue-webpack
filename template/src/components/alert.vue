@@ -4,14 +4,14 @@
          transition="scale">
         <div class="popup"
              @click.stop="">
-            <div class="title">\{{title}}</div>
+            <div class="title">/{{title}}</div>
             <div class="content">
                 <slot name="content"></slot>
             </div>
             <div class="btn-group"
                  v-if="btnList.length">
                 <button v-for="btn in alertBtnList"
-                        @click="btn.fn">\{{btn.text}}
+                        @click="btn.fn">/{{btn.text}}
                 </button>
             </div>
         </div>
@@ -58,17 +58,13 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+    @import '../scss/fragment';
 
     .box {
+        @include full-screen;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
         z-index: 4;
         padding: 20px;
     }
@@ -80,19 +76,20 @@
     }
 
     .title {
-        padding: 20px 20px 10px;
+        padding: 15px 20px 10px;
         text-align: center;
+        font-size: 18px;
+        font-weight: bold;
     }
 
-    .scale-transition {
-    }
-
-    .scale-enter {
-        animation: scaleIn .3s;
-    }
-
-    .scale-leave {
-        animation: scaleOut .3s;
+    .scale {
+        &-transition {}
+        &-enter {
+            animation: scaleIn .3s;
+        }
+        &-leave {
+            animation: scaleOut .3s;
+        }
     }
 
     @keyframes scaleIn {
@@ -136,36 +133,21 @@
         display: flex;
         justify-content: space-between;
         position: relative;
-    }
-
-    .btn-group::before {
-        content: "";
-        width: 100%;
-        height: 1px;
-        border-top: 1px solid $borderColor;
-        transform: scaleY(.5);
-        transform-origin: 0 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
+        &::before {
+            @include row-border;
+            top: 0;
+        }
     }
 
     button {
         flex: 1;
-    }
-
-    button:active::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-color: rgba(0, 0, 0, .1);
+        &:active::after {
+            @include active-drop
+        }
     }
 
     .content {
         padding: 0 20px 20px;
+        text-align: center;
     }
 </style>
