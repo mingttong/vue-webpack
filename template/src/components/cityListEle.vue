@@ -1,22 +1,20 @@
 <template>
-    <div>
-        <ele :hide="hide">
-            <div class="city-list">
-                <div class="title">\{{text}}</div>
-                <div class="city2-list">
-                    <div class="city2-ele">
-                        <div v-for="city in detailFilter"
-                             track-by="$index"
-                             v-if="city[2] == lastCode"
-                             :class="{'selected': city[0] == thisCode, 'qx': isQx}"
-                             @click="fn(city[1][0], city[0])">
-                            \{{city[1][0]}}
-                        </div>
+    <ele :hide="hide">
+        <div class="city-list">
+            <div class="title">\{{text}}</div>
+            <div class="city2-list">
+                <div class="city2-ele">
+                    <div v-for="city in detailFilter"
+                         track-by="$index"
+                         v-if="city[2] == lastCode"
+                         :class="{'selected': city[0] == thisCode, 'qx': isQx}"
+                         @click="fn(city[1][0], city[0])">
+                        \{{city[1][0]}}
                     </div>
                 </div>
             </div>
-        </ele>
-    </div>
+        </div>
+    </ele>
 </template>
 
 <script type="text/ecmascript-6">
@@ -51,7 +49,9 @@
     }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
+<style rel="stylesheet/scss"
+       lang="scss"
+       scoped>
     @import '../scss/colorList';
 
     .city-list {
