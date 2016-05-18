@@ -32,18 +32,20 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     .free-btn {
         width: 80px;
         height: 80px;
         border-radius: 40px;
         position: fixed;
         z-index: 3;
-        background-color: var(--mainColor);
+        background-color: $mainColor;
         line-height: 80px;
         text-align: center;
         color: #fff;
         transition: .1s;
-        box-shadow: 0 0 6px 4px rgba(0, 0, 0, .1);
+        box-shadow: 0 0 6px 4px $activeDropColor;
     }
 </style>

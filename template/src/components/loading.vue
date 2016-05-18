@@ -22,7 +22,9 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     #loading {
         width: 100%;
         position: fixed;
@@ -32,7 +34,7 @@
     }
 
     #loading > div {
-        background: linear-gradient(to right, var(--minorColor) 35%, var(--linkColor) 50%, var(--minorColor) 65%);
+        background: linear-gradient(to right, $minorColor 35%, $linkColor 50%, $minorColor 65%);
         width: 200%;
         height: 3px;
         animation-name: loading;

@@ -26,14 +26,12 @@
     }
 </style>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     .group {
         margin-top: 10px;
     }
-
-    /*.group:first-child {*/
-    /*margin-top: 50px;*/
-    /*}*/
 
     .group:last-child {
         margin-bottom: 80px;
@@ -52,14 +50,14 @@
         padding: 10px;
         margin-top: 0;
         margin-bottom: 0 !important;
-        background-color: #fff;
+        background-color: white;
     }
 
     .fixed::before {
         content: "";
         width: 100%;
         height: 1px;
-        border-top: 1px solid var(--borderColor);
+        border-top: 1px solid $borderColor;
         position: absolute;
         top: 0;
         left: 0;

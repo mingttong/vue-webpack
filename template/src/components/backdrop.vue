@@ -16,9 +16,11 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    @import '../scss/colorList';
+
     #backdrop {
-        background: rgba(0, 0, 0, .6);
+        background: $backdropColor;
         z-index: 3;
         position: fixed;
         top: 0;
