@@ -34,8 +34,14 @@
         flex: 1;
     }
 
-    .row > input:first-child + .clear {
-        display: block;
+    .android .row > input:focus {
+        margin-right: 25px;
+    }
+
+    .android .row > input:focus + .clear,
+    .ios .row > input:first-child:focus + .clear{
+        opacity: 1;
+        z-index: 1;
     }
 
     .row > :first-child + input {
@@ -91,6 +97,8 @@
         top: 0;
         background: url("../assets/clear.svg") no-repeat center;
         background-size: 20px;
-        display: none;
+        opacity: 0;
+        z-index: -1;
+        transition: .1s;
     }
 </style>
