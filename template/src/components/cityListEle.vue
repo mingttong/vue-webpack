@@ -2,7 +2,7 @@
     <div>
         <ele :hide="hide">
             <div class="city-list">
-                <div class="title">{{text}}</div>
+                <div class="title">\{{text}}</div>
                 <div class="city2-list">
                     <div class="city2-ele">
                         <div v-for="city in detailFilter"
@@ -10,7 +10,7 @@
                              v-if="city[2] == lastCode"
                              :class="{'selected': city[0] == thisCode, 'qx': isQx}"
                              @click="fn(city[1][0], city[0])">
-                            {{city[1][0]}}
+                            \{{city[1][0]}}
                         </div>
                     </div>
                 </div>
