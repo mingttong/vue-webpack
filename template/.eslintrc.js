@@ -13,7 +13,6 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
-    {{#if_eq lintConfig "standard"}}
     // allow paren-less arrow functions
     'arrow-parens': 0,
     'indent': [2, 4, { 'SwitchCase': 1 }],
