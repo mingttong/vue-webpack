@@ -4,14 +4,14 @@
          transition="scale">
         <div class="popup"
              @click.stop="">
-            <div class="title">/{{title}}</div>
+            <div class="title">\{{title}}</div>
             <div class="content">
                 <slot name="content"></slot>
             </div>
             <div class="btn-group"
                  v-if="btnList.length">
                 <button v-for="btn in alertBtnList"
-                        @click="btn.fn">/{{btn.text}}
+                        @click="btn.fn">\{{btn.text}}
                 </button>
             </div>
         </div>

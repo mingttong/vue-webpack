@@ -5,7 +5,7 @@
                :alert-show="popupShow"
                :btn-list="btnList"
                :title="title">
-            <div slot="content">/{{{popupSettings.content}}}</div>
+            <div slot="content">\{{{popupSettings.content}}}</div>
         </alert>
     </div>
 </template>
