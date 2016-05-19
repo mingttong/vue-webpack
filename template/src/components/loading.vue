@@ -35,10 +35,12 @@
             background: linear-gradient(to right, $MINOR_COLOR 35%, $LINK_COLOR 50%, $MINOR_COLOR 65%);
             width: 200%;
             height: 3px;
-            animation-name: loading;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
             transform: translateX(-100%);
+            animation: {
+                name: loading;
+                duration: 2s;
+                iteration-count: infinite;
+            }
         }
     }
 

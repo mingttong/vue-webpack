@@ -50,37 +50,34 @@
     /* 这里写全局样式 */
     @import './scss/normal';
 
-    .fade-transition {
-        transition: .2s;
-        opacity: 1;
+    .fade {
+        &-transition {
+            transition: .2s;
+            opacity: 1;
+            will-change: opacity;
+        }
+        &-enter,
+        &-leave {
+            opacity: 0;
+            will-change: opacity;
+        }
     }
 
-    .fade-enter {
-        opacity: 0;
-        will-change: opacity;
-    }
-
-    .fade-leave {
-        opacity: 0;
-        will-change: opacity;
-    }
-    .tip:first-child {
+    .tip {
         font-size: 14px;
         color: $TIP_COLOR;
-        padding: 0 10px 10px;
-    }
-
-    .tip:last-child {
-        font-size: 14px;
-        color: $TIP_COLOR;
-        padding: 10px 10px 0;
+        &:first-child {
+            padding: 0 10px 10px;
+        }
+        &:last-child {
+            padding: 10px 10px 0;
+        }
+        > a {
+            color: $LINK_COLOR;
+        }
     }
 
     button + .tip {
         text-align: center;
-    }
-
-    .tip > a {
-        color: $LINK_COLOR;
     }
 </style>
