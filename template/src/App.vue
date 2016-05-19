@@ -54,7 +54,6 @@
         &-transition {
             transition: .2s;
             opacity: 1;
-            will-change: opacity;
         }
         &-enter,
         &-leave {
