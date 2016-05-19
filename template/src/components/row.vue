@@ -28,18 +28,19 @@
     }
 </script>
 
-<style>
-    .row > input:first-child {
-        text-align: left;
-        flex: 1;
-    }
-
-    .row > input:first-child + .clear {
-        display: block;
-    }
-
-    .row > :first-child + input {
-        flex: 1;
+<style rel="stylesheet/scss"
+       lang="scss">
+    .row {
+        > input:first-child {
+            text-align: left;
+            flex: 1;
+            + .clear {
+                display: block;
+            }
+        }
+        > :first-child + input {
+            flex: 1;
+        }
     }
 </style>
 
@@ -53,21 +54,12 @@
         padding: 10px;
         position: relative;
         min-height: 50px;
-    }
-
-    .row:first-child,
-    .tip + .row {
         &::before {
-            @extend %row-border
-        }
-    }
-
-    .row {
-        &::before {
+            @extend %row-border;
             top: 0;
         }
         &::after {
-            @extend %row-border
+            @extend %row-border;
         }
         .tip & {
             padding: 0;
@@ -77,6 +69,9 @@
             &::after {
                 content: none;
             }
+        }
+        ~ .row::before {
+            content: none;
         }
     }
 
