@@ -1,5 +1,6 @@
 @import 'const';
 // 常用片段
+// @extend 和 % 可以理解为引用, 所以编译的时候会自动组合选择器
 
 %row-border {
     content: "";
