@@ -69,7 +69,7 @@
         &::after {
             @extend %row-border
         }
-        @at-root .tip & {
+        .tip & {
             padding: 0;
             background-color: transparent;
             min-height: inherit;
