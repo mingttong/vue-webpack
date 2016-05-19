@@ -61,7 +61,7 @@
     @import '../scss/fragment';
 
     .box {
-        @include full-screen;
+        @extend %full-screen;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -135,7 +135,7 @@
         justify-content: space-between;
         position: relative;
         &::before {
-            @include row-border;
+            @extend %row-border;
             top: 0;
         }
     }
@@ -143,7 +143,7 @@
     button {
         flex: 1;
         &:active::after {
-            @include active-drop
+            @extend %active-drop
         }
     }
 

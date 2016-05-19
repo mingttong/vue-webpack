@@ -1,7 +1,7 @@
 @import './colorList';
 // 常用片段
 
-@mixin row-border {
+%row-border {
     content: "";
     width: 100%;
     height: 1px;
@@ -14,7 +14,7 @@
     z-index: 1;
 }
 
-@mixin btn-border {
+%btn-border {
     content: "";
     width: 200%;
     height: 200%;
@@ -24,7 +24,7 @@
     transform: scale(.5);
 }
 
-@mixin full-screen {
+%full-screen {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@
     right: 0;
 }
 
-@mixin active-drop {
+%active-drop {
     content: "";
     width: 100%;
     height: 100%;

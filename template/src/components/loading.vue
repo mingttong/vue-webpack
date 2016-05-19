@@ -66,7 +66,7 @@
     }
 
     #loading-drop {
-        @include full-screen;
+        @extend %full-screen;
         background: transparent;
         z-index: 3;
     }

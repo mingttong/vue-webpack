@@ -58,7 +58,7 @@
     .row:first-child,
     .tip + .row {
         &::before {
-            @include row-border
+            @extend %row-border
         }
     }
 
@@ -67,7 +67,7 @@
             top: 0;
         }
         &::after {
-            @include row-border
+            @extend %row-border
         }
         @at-root .tip & {
             padding: 0;

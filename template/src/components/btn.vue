@@ -56,7 +56,7 @@
     button {
         color: $MAIN_TEXT_COLOR;
         &::before {
-            @include btn-border;
+            @extend %btn-border;
             border: 2px solid $MAIN_TEXT_COLOR;
         }
     }
@@ -78,7 +78,7 @@
         background-color: white;
         color: $MINOR_COLOR;
         &::before {
-            @include btn-border;
+            @extend %btn-border;
             border: 2px solid $MINOR_COLOR;
         }
     }
@@ -100,6 +100,6 @@
     }
 
     :active::after {
-        @include active-drop
+        @extend %active-drop
     }
 </style>
