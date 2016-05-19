@@ -41,15 +41,16 @@
                 duration: 2s;
                 iteration-count: infinite;
             }
-        }
-    }
-
-    @keyframes loading {
-        0% {
-            transform: translateX(-65%);
-        }
-        100% {
-            transform: translateX(15%);
+            @at-root {
+                @keyframes loading {
+                    0% {
+                        transform: translateX(-65%);
+                    }
+                    100% {
+                        transform: translateX(15%);
+                    }
+                }
+            }
         }
     }
 

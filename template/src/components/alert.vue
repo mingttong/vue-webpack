@@ -90,41 +90,42 @@
         &-leave {
             animation: scaleOut .3s;
         }
-    }
+        @at-root {
+            @keyframes scaleIn {
+                0% {
+                    transform: scale(0);
+                }
 
-    @keyframes scaleIn {
-        0% {
-            transform: scale(0);
-        }
+                60% {
+                    transform: scale(1.1);
+                }
 
-        60% {
-            transform: scale(1.1);
-        }
+                80% {
+                    transform: scale(1.1);
+                }
 
-        80% {
-            transform: scale(1.1);
-        }
+                100% {
+                    transform: scale(1);
+                }
+            }
 
-        100% {
-            transform: scale(1);
-        }
-    }
+            @keyframes scaleOut {
+                100% {
+                    transform: scale(0);
+                }
 
-    @keyframes scaleOut {
-        100% {
-            transform: scale(0);
-        }
+                40% {
+                    transform: scale(1.2);
+                }
 
-        40% {
-            transform: scale(1.2);
-        }
+                10% {
+                    transform: scale(1.1);
+                }
 
-        10% {
-            transform: scale(1.1);
-        }
-
-        0% {
-            transform: scale(1);
+                0% {
+                    transform: scale(1);
+                }
+            }
         }
     }
 
