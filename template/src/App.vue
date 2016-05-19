@@ -1,5 +1,6 @@
 <template>
-    <div id="app">
+    <div id="app"
+         :class="browserClass">
         <loading :show="loading"></loading>
         <router-view transition="fade"
                      transition-mode="out-in"></router-view>
@@ -19,6 +20,11 @@
         vuex: {
             getters: {
                 loading: state => state.loading
+            }
+        },
+        data () {
+            return {
+                browserClass: {}
             }
         },
         components: {
@@ -46,7 +52,8 @@
     }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss"
+       lang="scss">
     /* 这里写全局样式 */
     @import './scss/normal';
 

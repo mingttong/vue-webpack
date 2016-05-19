@@ -31,15 +31,23 @@
 <style rel="stylesheet/scss"
        lang="scss">
     .row {
+        > :first-child + input {
+            flex: 1;
+        }
         > input:first-child {
             text-align: left;
             flex: 1;
-            + .clear {
-                display: block;
-            }
         }
-        > :first-child + input {
-            flex: 1;
+        .android & > input:focus {
+            margin-right: 25px;
+        }
+    }
+
+    .android .row > input,
+    .ios .row > input:first-child {
+        &:focus + .clear{
+            opacity: 1;
+            z-index: 1;
         }
     }
 </style>
@@ -81,8 +89,11 @@
         position: absolute;
         right: 0;
         top: 0;
-        background: url("../assets/clear.svg") no-repeat center;
-        background-size: 20px;
-        display: none;
+        background: url("../assets/clear.svg") no-repeat center {
+            size: 20px;
+        };
+        opacity: 0;
+        z-index: -1;
+        transition: .1s;
     }
 </style>
