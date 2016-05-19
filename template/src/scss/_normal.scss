@@ -25,7 +25,7 @@ button {
     height: 48px;
     line-height: 48px;
     border: none;
-    font-size: 14px;
+    font-size: $BUTTON_FONT_SIZE;
     position: relative;
     padding: 0;
     margin: 0;
@@ -45,7 +45,7 @@ input:focus, input, textarea, textarea:focus, select {
     background-color: white;
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    font-size: $BASE_FONT_SIZE;
     outline: 0;
 }
 

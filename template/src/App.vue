@@ -63,7 +63,7 @@
     }
 
     .tip {
-        font-size: 14px;
+        font-size: $TIP_FONT_SIZE;
         color: $TIP_COLOR;
         &:first-child {
             padding: 0 10px 10px;

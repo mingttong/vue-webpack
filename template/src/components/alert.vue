@@ -78,7 +78,7 @@
     .title {
         padding: 15px 20px 10px;
         text-align: center;
-        font-size: 18px;
+        font-size: $TITLE_FONT_SIZE;
         font-weight: bold;
     }
 
