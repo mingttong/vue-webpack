@@ -20,7 +20,7 @@
     @import '../scss/fragment';
 
     #backdrop {
-        @include full-screen;
+        @extend %full-screen;
         background: $BACKDROP_COLOR;
         z-index: 3;
     }

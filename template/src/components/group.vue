@@ -55,7 +55,7 @@
         margin-bottom: 0 !important;
         background-color: white;
         &::before {
-            @include row-border;
+            @extend %row-border;
             top: 0;
         }
     }

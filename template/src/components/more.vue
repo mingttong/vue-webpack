@@ -13,16 +13,6 @@
 <style rel="stylesheet/scss" lang="scss" scoped>
     @import '../scss/colorList';
 
-    @keyframes bounce {
-        0%, 80%, to {
-            transform: scale(0)
-        }
-
-        40% {
-            transform: scale(1)
-        }
-    }
-
     div {
         text-align: center;
         margin: 10px 0;
@@ -37,6 +27,17 @@
         border-radius: 100%;
         animation: bounce 1.6s infinite ease-in-out;
         animation-fill-mode: both;
+        @at-root {
+            @keyframes bounce {
+                0%, 80%, to {
+                    transform: scale(0)
+                }
+
+                40% {
+                    transform: scale(1)
+                }
+            }
+        }
     }
 
     .dot {

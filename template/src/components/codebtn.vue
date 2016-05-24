@@ -59,13 +59,16 @@
     }
 </script>
 
-<style scoped>
+<style rel="stylesheet/scss"
+       lang="scss"
+       scoped>
+    @import '../scss/fragment';
+
     .get-code {
         position: absolute;
         height: 50px;
         top: 0;
         right: 0;
-        font-size: 15px;
         z-index: 2;
     }
 </style>

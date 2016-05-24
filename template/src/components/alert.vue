@@ -61,7 +61,7 @@
     @import '../scss/fragment';
 
     .box {
-        @include full-screen;
+        @extend %full-screen;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -72,13 +72,13 @@
     .popup {
         width: 100%;
         background-color: white;
-        border-radius: 3px;
+        border-radius: $BORDER_RADIUS;
     }
 
     .title {
         padding: 15px 20px 10px;
         text-align: center;
-        font-size: 18px;
+        font-size: $TITLE_FONT_SIZE;
         font-weight: bold;
     }
 
@@ -90,41 +90,42 @@
         &-leave {
             animation: scaleOut .3s;
         }
-    }
+        @at-root {
+            @keyframes scaleIn {
+                0% {
+                    transform: scale(0);
+                }
 
-    @keyframes scaleIn {
-        0% {
-            transform: scale(0);
-        }
+                60% {
+                    transform: scale(1.1);
+                }
 
-        60% {
-            transform: scale(1.1);
-        }
+                80% {
+                    transform: scale(1.1);
+                }
 
-        80% {
-            transform: scale(1.1);
-        }
+                100% {
+                    transform: scale(1);
+                }
+            }
 
-        100% {
-            transform: scale(1);
-        }
-    }
+            @keyframes scaleOut {
+                100% {
+                    transform: scale(0);
+                }
 
-    @keyframes scaleOut {
-        100% {
-            transform: scale(0);
-        }
+                40% {
+                    transform: scale(1.2);
+                }
 
-        40% {
-            transform: scale(1.2);
-        }
+                10% {
+                    transform: scale(1.1);
+                }
 
-        10% {
-            transform: scale(1.1);
-        }
-
-        0% {
-            transform: scale(1);
+                0% {
+                    transform: scale(1);
+                }
+            }
         }
     }
 
@@ -134,7 +135,7 @@
         justify-content: space-between;
         position: relative;
         &::before {
-            @include row-border;
+            @extend %row-border;
             top: 0;
         }
     }
@@ -142,7 +143,7 @@
     button {
         flex: 1;
         &:active::after {
-            @include active-drop
+            @extend %active-drop
         }
     }
 

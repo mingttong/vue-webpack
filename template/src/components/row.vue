@@ -28,18 +28,27 @@
     }
 </script>
 
-<style>
-    .row > input:first-child {
-        text-align: left;
-        flex: 1;
+<style rel="stylesheet/scss"
+       lang="scss">
+    .row {
+        > :first-child + input {
+            flex: 1;
+        }
+        > input:first-child {
+            text-align: left;
+            flex: 1;
+        }
+        .android & > input:focus {
+            margin-right: 25px;
+        }
     }
 
-    .row > input:first-child + .clear {
-        display: block;
-    }
-
-    .row > :first-child + input {
-        flex: 1;
+    .android .row > input,
+    .ios .row > input:first-child {
+        &:focus + .clear{
+            opacity: 1;
+            z-index: 1;
+        }
     }
 </style>
 
@@ -53,21 +62,12 @@
         padding: 10px;
         position: relative;
         min-height: 50px;
-    }
-
-    .row:first-child,
-    .tip + .row {
         &::before {
-            @include row-border
-        }
-    }
-
-    .row {
-        &::before {
+            @extend %row-border;
             top: 0;
         }
         &::after {
-            @include row-border
+            @extend %row-border;
         }
         .tip & {
             padding: 0;
@@ -78,6 +78,9 @@
                 content: none;
             }
         }
+        ~ .row::before {
+            content: none;
+        }
     }
 
     .clear {
@@ -86,8 +89,11 @@
         position: absolute;
         right: 0;
         top: 0;
-        background: url("../assets/clear.svg") no-repeat center;
-        background-size: 20px;
-        display: none;
+        background: url("../assets/clear.svg") no-repeat center {
+            size: 20px;
+        };
+        opacity: 0;
+        z-index: -1;
+        transition: .1s;
     }
 </style>

@@ -1,5 +1,6 @@
 <template>
-    <div id="app">
+    <div id="app"
+         :class="browserClass">
         <loading :show="loading"></loading>
         <router-view transition="fade"
                      transition-mode="out-in"></router-view>
@@ -19,6 +20,11 @@
         vuex: {
             getters: {
                 loading: state => state.loading
+            }
+        },
+        data () {
+            return {
+                browserClass: {}
             }
         },
         components: {
@@ -46,41 +52,38 @@
     }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss"
+       lang="scss">
     /* 这里写全局样式 */
     @import './scss/normal';
 
-    .fade-transition {
-        transition: .2s;
-        opacity: 1;
+    .fade {
+        &-transition {
+            transition: .2s;
+            opacity: 1;
+        }
+        &-enter,
+        &-leave {
+            opacity: 0;
+            will-change: opacity;
+        }
     }
 
-    .fade-enter {
-        opacity: 0;
-        will-change: opacity;
-    }
-
-    .fade-leave {
-        opacity: 0;
-        will-change: opacity;
-    }
-    .tip:first-child {
-        font-size: 14px;
+    .tip {
+        font-size: $TIP_FONT_SIZE;
         color: $TIP_COLOR;
-        padding: 0 10px 10px;
-    }
-
-    .tip:last-child {
-        font-size: 14px;
-        color: $TIP_COLOR;
-        padding: 10px 10px 0;
+        &:first-child {
+            padding: 0 10px 10px;
+        }
+        &:last-child {
+            padding: 10px 10px 0;
+        }
+        > a {
+            color: $LINK_COLOR;
+        }
     }
 
     button + .tip {
         text-align: center;
-    }
-
-    .tip > a {
-        color: $LINK_COLOR;
     }
 </style>

@@ -35,19 +35,22 @@
             background: linear-gradient(to right, $MINOR_COLOR 35%, $LINK_COLOR 50%, $MINOR_COLOR 65%);
             width: 200%;
             height: 3px;
-            animation-name: loading;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
             transform: translateX(-100%);
-        }
-    }
-
-    @keyframes loading {
-        0% {
-            transform: translateX(-65%);
-        }
-        100% {
-            transform: translateX(15%);
+            animation: {
+                name: loading;
+                duration: 2s;
+                iteration-count: infinite;
+            }
+            @at-root {
+                @keyframes loading {
+                    0% {
+                        transform: translateX(-65%);
+                    }
+                    100% {
+                        transform: translateX(15%);
+                    }
+                }
+            }
         }
     }
 
@@ -63,7 +66,7 @@
     }
 
     #loading-drop {
-        @include full-screen;
+        @extend %full-screen;
         background: transparent;
         z-index: 3;
     }
