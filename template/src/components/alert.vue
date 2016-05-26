@@ -37,19 +37,21 @@
         computed: {
             alertBtnList () {
                 const that = this
-                let hidePopup = this.hidePopup
-                let alertVal = []
-                let val = this.btnList
-                for (let i in val) {
-                    alertVal.push({})
-                    alertVal[i] = {
-                        text: val[i].text,
-                        fn: function () {
-                            val[i].fn.bind(that)()
-                            hidePopup()
+                const hidePopupFn = this.hidePopup
+                const alertVal = []
+                const val = this.btnList
+                for (const i in val) {
+                    if (i) {
+                        alertVal.push({})
+                        alertVal[i] = {
+                            text: val[i].text,
+                            fn () {
+                                val[i].fn.bind(that)()
+                                hidePopupFn()
+                            }
                         }
+                        if (i === val.length - 1) break
                     }
-                    if (i == val.length - 1) break
                 }
                 return alertVal
             }
@@ -57,7 +59,9 @@
     }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
+<style rel="stylesheet/scss"
+       lang="scss"
+       scoped>
     @import '../scss/fragment';
 
     .box {
@@ -83,7 +87,8 @@
     }
 
     .scale {
-        &-transition {}
+        &-transition {
+        }
         &-enter {
             animation: scaleIn .3s;
         }
