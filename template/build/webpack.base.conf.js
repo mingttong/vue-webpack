@@ -86,6 +86,10 @@ module.exports = {
   },
   {{/lint}}
   vue: {
-    loaders: utils.cssLoaders()
+      loaders: utils.cssLoaders()
+//      todo: 等 webstorm 支持 postcss lint 再开启
+//      ,
+//      postcss: [require('postcss-cssnext')()],
+//      autoprefixer: false
   }
 }
