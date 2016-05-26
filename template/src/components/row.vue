@@ -16,7 +16,7 @@
         ],
         methods: {
             clear (e) {
-                e.target.previousElementSibling.value = ""
+                e.target.previousElementSibling.value = ''
                 e.target.previousElementSibling.focus()
             },
             stop () {
