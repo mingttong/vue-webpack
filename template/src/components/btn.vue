@@ -28,16 +28,16 @@
             },
             btnFn: {
                 type: Function,
-                default: function () {
+                default () {
                 }
             }
         },
         computed: {
             btnWidth () {
                 if (!this.cut) {
-                    return 100 + "px"
+                    return '100px'
                 }
-                return (1 / this.cut) * 100 + "%"
+                return `${(1 / this.cut) * 100}%`
             }
         },
         methods: {

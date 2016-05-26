@@ -15,17 +15,17 @@
         ],
         data () {
             return {
-                currentX: window.innerWidth - 90 + 'px',
-                currentY: window.innerHeight - 90 + 'px'
+                currentX: `${window.innerWidth - 90}px`,
+                currentY: `${window.innerHeight - 90}px`
             }
         },
         methods: {
             touchmove (e) {
                 if (e.touches[0].clientX > 40 && e.touches[0].clientX < window.innerWidth - 40) {
-                    this.currentX = e.touches[0].clientX - 40 + 'px'
+                    this.currentX = `${e.touches[0].clientX - 40}px`
                 }
                 if (e.touches[0].clientY > 40 && e.touches[0].clientY < window.innerHeight - 40) {
-                    this.currentY = e.touches[0].clientY - 40 + 'px'
+                    this.currentY = `${e.touches[0].clientY - 40}px`
                 }
             }
         }
@@ -33,7 +33,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+    @import '../scss/const';
 
     .free-btn {
         width: 80px;

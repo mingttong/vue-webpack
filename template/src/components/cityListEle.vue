@@ -38,9 +38,7 @@
         computed: {
             detailFilter () {
                 const code = this.lastCode
-                return this.detail.filter((ele) => {
-                    return (ele[2] == code)
-                })
+                return this.detail.filter(e => e[2] === code)
             }
         },
         components: {
@@ -52,7 +50,7 @@
 <style rel="stylesheet/scss"
        lang="scss"
        scoped>
-    @import '../scss/colorList';
+    @import '../scss/const';
 
     .city-list {
         width: 100%;

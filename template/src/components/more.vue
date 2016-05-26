@@ -11,7 +11,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+    @import '../scss/const';
 
     div {
         text-align: center;

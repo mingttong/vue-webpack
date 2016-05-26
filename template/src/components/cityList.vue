@@ -105,7 +105,7 @@
         },
         methods: {
             setCity1 (city1) {
-                if (city1 != this.city1) {
+                if (city1 !== this.city1) {
                     this.city1 = city1
                     this.city2 = ''
                     this.code1 = ''
@@ -119,7 +119,7 @@
                 }
             },
             setCity2 (city2, code1) {
-                if (city2 != this.city2) {
+                if (city2 !== this.city2) {
                     this.city2 = city2
                     this.code1 = code1
                     this.city3 = ''
@@ -129,19 +129,19 @@
                     this.road = ''
                     this.roads = []
                     this.code4 = ''
-                    if (code1 == '110000' ||
-                        code1 == '500000' ||
-                        code1 == '310000' ||
-                        code1 == '120000') {
+                    if (code1 === '110000' ||
+                        code1 === '500000' ||
+                        code1 === '310000' ||
+                        code1 === '120000') {
                         this.hideCity = true
-                        this.setCity3('', (parseInt(code1) + 100))
+                        this.setCity3('', (parseInt(code1, 10) + 100))
                     } else {
                         this.hideCity = false
                     }
                 }
             },
             setCity3 (city3, code2) {
-                if (city3 != this.city3 || !city3) {
+                if (city3 !== this.city3 || !city3) {
                     this.city3 = city3
                     this.code2 = code2
                     this.city4 = ''
@@ -151,7 +151,7 @@
                     this.code4 = ''
                     this.$nextTick(() => {
                         const qxNum = document.getElementsByClassName('qx').length
-                        if (qxNum == 0) {
+                        if (qxNum === 0) {
                             this.hideQx = true
                             this.getAddress()
                         } else {
@@ -161,7 +161,7 @@
                 }
             },
             setCity4 (city4, code3) {
-                if (city4 != this.city4) {
+                if (city4 !== this.city4) {
                     this.city4 = city4
                     this.code3 = code3
                     this.road = ''
@@ -196,7 +196,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-    @import '../scss/colorList';
+    @import '../scss/const';
 
     .city-list {
         width: 100%;

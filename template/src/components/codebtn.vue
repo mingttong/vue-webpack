@@ -33,7 +33,7 @@
                         this.fn()
                         this.startCount()
                     } else {
-                        utils.alert("请输入11位手机号码")
+                        utils.alert('请输入11位手机号码')
                     }
                 } else {
                     this.fn()
@@ -44,7 +44,7 @@
                 let count = 60
                 this.text = `剩余${count}秒`
                 this.allow = false
-                let start = setInterval(() => {
+                const start = setInterval(() => {
                     if (count === 1) {
                         clearInterval(start)
                         this.text = '获取验证码'
