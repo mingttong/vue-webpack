@@ -5,7 +5,7 @@ module.exports = {
   extends: 'standard',
   {{/if_eq}}
   {{#if_eq lintConfig "airbnb"}}
-  extends: 'airbnb/base',
+  extends: 'airbnb-base',
   {{/if_eq}}
   // required to lint *.vue files
   plugins: [
@@ -24,6 +24,10 @@ module.exports = {
     'no-param-reassign': [2, {'props': false}],
     'object-curly-spacing': 0,
     'max-len': [1, 80, 4],
+    {{/if_eq}}
+    {{#if_eq lintConfig "airbnb"}}
+    'import/no-unresolved': 0,
+    {{/if_eq}}
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
